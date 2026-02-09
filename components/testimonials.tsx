@@ -1,3 +1,4 @@
+import { unstable_noStore as noStore } from "next/cache"
 import { sql } from "@/lib/db"
 import { TestimonialsCarousel } from "./testimonials-carousel"
 
@@ -11,12 +12,13 @@ type Testimonial = {
 }
 
 export async function Testimonials() {
+  noStore()
   let testimonials: Testimonial[] = []
   try {
     testimonials = (await sql`
       SELECT id, name, company, role, quote, rating
       FROM testimonials
-      WHERE featured = true
+      WHERE COALESCE(featured, true) = true
       ORDER BY sort_order ASC
     `) as Testimonial[]
   } catch (error) {

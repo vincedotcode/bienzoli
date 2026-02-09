@@ -102,6 +102,97 @@ INSERT INTO leads (name, company, email, phone, whatsapp, monthly_ad_budget, ser
   ('Vinod Doobur', 'GreenTech Solutions', 'vinod@greentech.mu', '+230 5234 5678', '+230 5234 5678', 'Rs 15,000 - Rs 30,000', 'Website + SEO', 'Corporate site refresh with sustainability focus.', 'google', 'lost', 0, NOW() - INTERVAL '45 days')
 ON CONFLICT DO NOTHING;
 
+INSERT INTO projects (title, slug, client_name, description, long_description, url, image_url, tags, featured, sort_order, created_at) VALUES
+  (
+    'Island Spice E-Commerce',
+    'island-spice-ecommerce',
+    'Island Spice Co.',
+    'E-commerce storefront with WhatsApp order flow, product filtering, and SEO-ready structure.',
+    'A conversion-focused e-commerce site for a local spice brand with fast product browsing, clear CTAs, and mobile-first checkout routing to WhatsApp.',
+    'https://islandspice.mu',
+    '/illustrations/team-collab.jpg',
+    ARRAY['E-commerce', 'SEO', 'WhatsApp'],
+    true,
+    1,
+    NOW() - INTERVAL '35 days'
+  ),
+  (
+    'Belle Vue Property Portal',
+    'belle-vue-property-portal',
+    'Belle Vue Realty',
+    'Property showcase with inquiry forms, lead capture, and CRM-ready pipeline integration.',
+    'A real estate web portal with listing pages, segmented lead capture, and back-office visibility for sales follow-up.',
+    'https://bellevue.mu',
+    '/illustrations/mauritian-team.jpg',
+    ARRAY['CRM', 'Lead Capture', 'Real Estate'],
+    true,
+    2,
+    NOW() - INTERVAL '28 days'
+  ),
+  (
+    'Mauritius Surf Booking',
+    'mauritius-surf-booking',
+    'Mauritius Surf School',
+    'Landing page with booking flow, trust sections, and ad-friendly campaign structure.',
+    'A high-converting landing page built for social traffic, optimized for booking intents and quick contact conversion.',
+    'https://musurf.com',
+    '/illustrations/mauritian-developer.jpg',
+    ARRAY['Landing Page', 'Booking', 'Performance'],
+    true,
+    3,
+    NOW() - INTERVAL '18 days'
+  ),
+  (
+    'Fleur de Lys Menu Site',
+    'fleur-de-lys-menu-site',
+    'Fleur de Lys Bakery',
+    'Simple branded menu site with click-to-WhatsApp ordering and daily specials.',
+    'A lightweight menu website for rapid updates and easy mobile ordering, tailored for neighborhood bakery traffic.',
+    'https://fleurdelys.mu',
+    '/illustrations/hero-person.jpg',
+    ARRAY['Restaurant', 'WhatsApp', 'Mobile'],
+    false,
+    4,
+    NOW() - INTERVAL '10 days'
+  )
+ON CONFLICT (slug) DO NOTHING;
+
+INSERT INTO testimonials (name, company, role, quote, rating, avatar_url, featured, sort_order, created_at) VALUES
+  (
+    'Sophie Laurent',
+    'Belle Vue Realty',
+    'Managing Director',
+    'The new website and CRM pipeline made lead follow-up much faster. We are closing higher-value clients with less manual work.',
+    5,
+    NULL,
+    true,
+    1,
+    NOW() - INTERVAL '21 days'
+  ),
+  (
+    'Raj Doorgakant',
+    'Mauritius Surf School',
+    'Founder',
+    'Our booking inquiries increased within the first week. The landing page is fast, clear, and easy for our students to use on mobile.',
+    5,
+    NULL,
+    true,
+    2,
+    NOW() - INTERVAL '16 days'
+  ),
+  (
+    'Aisha Ramsamy',
+    'Island Spice Co.',
+    'Owner',
+    'The e-commerce flow with WhatsApp ordering feels premium and practical. Exactly what we needed for local conversions.',
+    5,
+    NULL,
+    true,
+    3,
+    NOW() - INTERVAL '12 days'
+  )
+ON CONFLICT DO NOTHING;
+
 INSERT INTO lead_activities (lead_id, type, content, created_at) VALUES
   (1, 'note', 'Initial call - very interested in e-commerce features. Follows up next week.', NOW() - INTERVAL '11 days'),
   (1, 'status_change', 'Status changed from new to contacted', NOW() - INTERVAL '11 days'),

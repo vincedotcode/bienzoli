@@ -12,6 +12,8 @@ import { FAQ } from "@/components/faq"
 import { CTASection } from "@/components/cta-section"
 import { Footer } from "@/components/footer"
 
+export const dynamic = "force-dynamic"
+
 function SectionSkeleton() {
   return (
     <div className="py-24 sm:py-32">
