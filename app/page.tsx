@@ -44,9 +44,9 @@ export default function Page() {
         <Suspense fallback={<SectionSkeleton />}>
           <ProjectsShowcase />
         </Suspense>
-        <ProductPreview />
+        {/* <ProductPreview /> */}
         <Suspense fallback={<SectionSkeleton />}>
-          <Testimonials />
+          {/* <Testimonials /> */}
         </Suspense>
         <Pricing />
         <FAQ />
