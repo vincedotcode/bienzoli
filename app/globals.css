@@ -1,0 +1,190 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 222 20% 10%;
+    --card: 220 16% 96%;
+    --card-foreground: 222 20% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 20% 10%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 94% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 220 14% 94%;
+    --muted-foreground: 220 9% 46%;
+    --accent: 220 14% 94%;
+    --accent-foreground: 222 20% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 220 13% 90%;
+    --input: 220 13% 90%;
+    --ring: 199 89% 48%;
+    --chart-1: 199 89% 48%;
+    --chart-2: 24 94% 53%;
+    --chart-3: 222 20% 10%;
+    --chart-4: 220 14% 94%;
+    --chart-5: 220 9% 46%;
+    --radius: 0.625rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 90%;
+    --sidebar-ring: 199 89% 48%;
+    --lagoon: 199 89% 48%;
+    --coral: 24 94% 53%;
+    --surface: 220 16% 96%;
+  }
+
+  .dark {
+    --background: 225 16% 5%;
+    --foreground: 210 20% 95%;
+    --card: 224 14% 8%;
+    --card-foreground: 210 20% 95%;
+    --popover: 224 14% 8%;
+    --popover-foreground: 210 20% 95%;
+    --primary: 199 89% 48%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 24 94% 53%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 223 14% 12%;
+    --muted-foreground: 218 11% 50%;
+    --accent: 223 14% 12%;
+    --accent-foreground: 210 20% 95%;
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 223 13% 14%;
+    --input: 223 13% 14%;
+    --ring: 199 89% 48%;
+    --chart-1: 199 89% 48%;
+    --chart-2: 24 94% 53%;
+    --chart-3: 210 20% 95%;
+    --chart-4: 223 14% 12%;
+    --chart-5: 218 11% 50%;
+    --sidebar-background: 225 16% 5%;
+    --sidebar-foreground: 210 20% 95%;
+    --sidebar-primary: 199 89% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 223 14% 12%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 223 13% 14%;
+    --sidebar-ring: 199 89% 48%;
+    --lagoon: 199 89% 48%;
+    --coral: 24 94% 53%;
+    --surface: 224 14% 8%;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Grid background pattern utility */
+.bg-grid {
+  background-image: linear-gradient(
+      to right,
+      hsl(var(--border) / 0.4) 1px,
+      transparent 1px
+    ),
+    linear-gradient(to bottom, hsl(var(--border) / 0.4) 1px, transparent 1px);
+  background-size: 64px 64px;
+}
+
+/* Subtle noise texture */
+.bg-noise {
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+/* Glow utilities */
+.glow-lagoon {
+  box-shadow: 0 0 40px -12px hsl(var(--lagoon) / 0.35),
+    0 0 80px -20px hsl(var(--lagoon) / 0.15);
+}
+
+.glow-coral {
+  box-shadow: 0 0 40px -12px hsl(var(--coral) / 0.35),
+    0 0 80px -20px hsl(var(--coral) / 0.15);
+}
+
+/* Radial gradient glow behind elements */
+.radial-glow-lagoon {
+  background: radial-gradient(
+    ellipse at center,
+    hsl(var(--lagoon) / 0.12) 0%,
+    transparent 70%
+  );
+}
+
+.radial-glow-coral {
+  background: radial-gradient(
+    ellipse at center,
+    hsl(var(--coral) / 0.08) 0%,
+    transparent 70%
+  );
+}
+
+/* Rich Text Editor (Quill) */
+.ql-toolbar.ql-snow {
+  border-color: hsl(var(--border)) !important;
+  border-radius: var(--radius) var(--radius) 0 0;
+  background: hsl(var(--muted));
+}
+.ql-container.ql-snow {
+  border-color: hsl(var(--border)) !important;
+  border-radius: 0 0 var(--radius) var(--radius);
+  background: hsl(var(--card));
+  color: hsl(var(--foreground));
+  font-family: inherit;
+  min-height: 150px;
+}
+.ql-editor {
+  min-height: 150px;
+  font-size: 0.875rem;
+  line-height: 1.6;
+}
+.ql-editor.ql-blank::before {
+  color: hsl(var(--muted-foreground)) !important;
+  font-style: normal !important;
+}
+.ql-snow .ql-stroke {
+  stroke: hsl(var(--muted-foreground)) !important;
+}
+.ql-snow .ql-fill {
+  fill: hsl(var(--muted-foreground)) !important;
+}
+.ql-snow .ql-picker-label {
+  color: hsl(var(--muted-foreground)) !important;
+}
+.ql-snow .ql-picker-options {
+  background: hsl(var(--popover)) !important;
+  border-color: hsl(var(--border)) !important;
+}
+.ql-snow .ql-picker-item {
+  color: hsl(var(--foreground)) !important;
+}
+.ql-snow .ql-active .ql-stroke {
+  stroke: hsl(var(--lagoon)) !important;
+}
+.ql-snow .ql-active .ql-fill {
+  fill: hsl(var(--lagoon)) !important;
+}
+.ql-snow a {
+  color: hsl(var(--lagoon)) !important;
+}
