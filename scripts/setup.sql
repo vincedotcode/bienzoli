@@ -52,11 +52,45 @@ CREATE TABLE IF NOT EXISTS whatsapp_events (
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
+-- Portfolio projects (for website + CRM)
+CREATE TABLE IF NOT EXISTS projects (
+  id SERIAL PRIMARY KEY,
+  title VARCHAR(255) NOT NULL,
+  slug VARCHAR(255) NOT NULL UNIQUE,
+  client_name VARCHAR(255),
+  description TEXT NOT NULL,
+  long_description TEXT,
+  url VARCHAR(500),
+  image_url VARCHAR(500),
+  tags TEXT[] DEFAULT ARRAY[]::TEXT[],
+  featured BOOLEAN DEFAULT true,
+  sort_order INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Client testimonials (for website + CRM)
+CREATE TABLE IF NOT EXISTS testimonials (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255) NOT NULL,
+  company VARCHAR(255),
+  role VARCHAR(255),
+  quote TEXT NOT NULL,
+  rating INTEGER DEFAULT 5 CHECK (rating >= 1 AND rating <= 5),
+  avatar_url VARCHAR(500),
+  featured BOOLEAN DEFAULT true,
+  sort_order INTEGER DEFAULT 0,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW()
+);
+
 -- Indexes
 CREATE INDEX IF NOT EXISTS idx_leads_status ON leads(status);
 CREATE INDEX IF NOT EXISTS idx_leads_created ON leads(created_at);
 CREATE INDEX IF NOT EXISTS idx_lead_activities_lead ON lead_activities(lead_id);
 CREATE INDEX IF NOT EXISTS idx_whatsapp_events_lead ON whatsapp_events(lead_id);
+CREATE INDEX IF NOT EXISTS idx_projects_featured_sort ON projects(featured, sort_order);
+CREATE INDEX IF NOT EXISTS idx_testimonials_featured_sort ON testimonials(featured, sort_order);
 
 -- Seed data for demo
 INSERT INTO leads (name, company, email, phone, whatsapp, monthly_ad_budget, service_needed, message, source, status, won_value, created_at) VALUES

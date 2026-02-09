@@ -1,5 +1,24 @@
 import { sql } from "@/lib/db"
 
+type DbError = {
+  code?: string
+  message?: string
+}
+
+function isMissingRelationError(error: unknown, relation: string): boolean {
+  if (!error || typeof error !== "object") return false
+
+  const dbError = error as DbError
+  if (dbError.code !== "42P01") return false
+  if (typeof dbError.message !== "string") return true
+
+  return dbError.message.includes(`"${relation}"`) || dbError.message.includes(relation)
+}
+
+function missingTableHint(table: string): Error {
+  return new Error(`Database table "${table}" is missing. Run scripts/setup.sql against your database.`)
+}
+
 export type Lead = {
   id: number
   name: string
@@ -168,12 +187,22 @@ export type Project = {
 }
 
 export async function getProjects(): Promise<Project[]> {
-  return (await sql`SELECT * FROM projects ORDER BY sort_order ASC`) as Project[]
+  try {
+    return (await sql`SELECT * FROM projects ORDER BY sort_order ASC`) as Project[]
+  } catch (error) {
+    if (isMissingRelationError(error, "projects")) return []
+    throw error
+  }
 }
 
 export async function getProjectById(id: number): Promise<Project | null> {
-  const rows = await sql`SELECT * FROM projects WHERE id = ${id}`
-  return (rows[0] as Project) || null
+  try {
+    const rows = await sql`SELECT * FROM projects WHERE id = ${id}`
+    return (rows[0] as Project) || null
+  } catch (error) {
+    if (isMissingRelationError(error, "projects")) return null
+    throw error
+  }
 }
 
 export async function upsertProject(data: {
@@ -189,32 +218,42 @@ export async function upsertProject(data: {
   featured?: boolean
   sort_order?: number
 }): Promise<void> {
-  if (data.id) {
-    await sql`
-      UPDATE projects SET
-        title = ${data.title},
-        slug = ${data.slug},
-        client_name = ${data.client_name || null},
-        description = ${data.description},
-        long_description = ${data.long_description || null},
-        url = ${data.url || null},
-        image_url = ${data.image_url || null},
-        tags = ${data.tags || []},
-        featured = ${data.featured ?? true},
-        sort_order = ${data.sort_order ?? 0},
-        updated_at = NOW()
-      WHERE id = ${data.id}
-    `
-  } else {
-    await sql`
-      INSERT INTO projects (title, slug, client_name, description, long_description, url, image_url, tags, featured, sort_order)
-      VALUES (${data.title}, ${data.slug}, ${data.client_name || null}, ${data.description}, ${data.long_description || null}, ${data.url || null}, ${data.image_url || null}, ${data.tags || []}, ${data.featured ?? true}, ${data.sort_order ?? 0})
-    `
+  try {
+    if (data.id) {
+      await sql`
+        UPDATE projects SET
+          title = ${data.title},
+          slug = ${data.slug},
+          client_name = ${data.client_name || null},
+          description = ${data.description},
+          long_description = ${data.long_description || null},
+          url = ${data.url || null},
+          image_url = ${data.image_url || null},
+          tags = ${data.tags || []},
+          featured = ${data.featured ?? true},
+          sort_order = ${data.sort_order ?? 0},
+          updated_at = NOW()
+        WHERE id = ${data.id}
+      `
+    } else {
+      await sql`
+        INSERT INTO projects (title, slug, client_name, description, long_description, url, image_url, tags, featured, sort_order)
+        VALUES (${data.title}, ${data.slug}, ${data.client_name || null}, ${data.description}, ${data.long_description || null}, ${data.url || null}, ${data.image_url || null}, ${data.tags || []}, ${data.featured ?? true}, ${data.sort_order ?? 0})
+      `
+    }
+  } catch (error) {
+    if (isMissingRelationError(error, "projects")) throw missingTableHint("projects")
+    throw error
   }
 }
 
 export async function deleteProject(id: number): Promise<void> {
-  await sql`DELETE FROM projects WHERE id = ${id}`
+  try {
+    await sql`DELETE FROM projects WHERE id = ${id}`
+  } catch (error) {
+    if (isMissingRelationError(error, "projects")) throw missingTableHint("projects")
+    throw error
+  }
 }
 
 // ---- Testimonials ----
@@ -232,7 +271,12 @@ export type Testimonial = {
 }
 
 export async function getTestimonials(): Promise<Testimonial[]> {
-  return (await sql`SELECT * FROM testimonials ORDER BY sort_order ASC`) as Testimonial[]
+  try {
+    return (await sql`SELECT * FROM testimonials ORDER BY sort_order ASC`) as Testimonial[]
+  } catch (error) {
+    if (isMissingRelationError(error, "testimonials")) return []
+    throw error
+  }
 }
 
 export async function upsertTestimonial(data: {
@@ -246,29 +290,40 @@ export async function upsertTestimonial(data: {
   featured?: boolean
   sort_order?: number
 }): Promise<void> {
-  if (data.id) {
-    await sql`
-      UPDATE testimonials SET
-        name = ${data.name},
-        company = ${data.company || null},
-        role = ${data.role || null},
-        quote = ${data.quote},
-        rating = ${data.rating ?? 5},
-        avatar_url = ${data.avatar_url || null},
-        featured = ${data.featured ?? true},
-        sort_order = ${data.sort_order ?? 0}
-      WHERE id = ${data.id}
-    `
-  } else {
-    await sql`
-      INSERT INTO testimonials (name, company, role, quote, rating, avatar_url, featured, sort_order)
-      VALUES (${data.name}, ${data.company || null}, ${data.role || null}, ${data.quote}, ${data.rating ?? 5}, ${data.avatar_url || null}, ${data.featured ?? true}, ${data.sort_order ?? 0})
-    `
+  try {
+    if (data.id) {
+      await sql`
+        UPDATE testimonials SET
+          name = ${data.name},
+          company = ${data.company || null},
+          role = ${data.role || null},
+          quote = ${data.quote},
+          rating = ${data.rating ?? 5},
+          avatar_url = ${data.avatar_url || null},
+          featured = ${data.featured ?? true},
+          sort_order = ${data.sort_order ?? 0},
+          updated_at = NOW()
+        WHERE id = ${data.id}
+      `
+    } else {
+      await sql`
+        INSERT INTO testimonials (name, company, role, quote, rating, avatar_url, featured, sort_order)
+        VALUES (${data.name}, ${data.company || null}, ${data.role || null}, ${data.quote}, ${data.rating ?? 5}, ${data.avatar_url || null}, ${data.featured ?? true}, ${data.sort_order ?? 0})
+      `
+    }
+  } catch (error) {
+    if (isMissingRelationError(error, "testimonials")) throw missingTableHint("testimonials")
+    throw error
   }
 }
 
 export async function deleteTestimonial(id: number): Promise<void> {
-  await sql`DELETE FROM testimonials WHERE id = ${id}`
+  try {
+    await sql`DELETE FROM testimonials WHERE id = ${id}`
+  } catch (error) {
+    if (isMissingRelationError(error, "testimonials")) throw missingTableHint("testimonials")
+    throw error
+  }
 }
 
 // ---- CSV Export ----

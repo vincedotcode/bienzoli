@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { getProjects } from "@/lib/crm-queries"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, Plus, ExternalLink, Pencil } from "lucide-react"
+import { ArrowLeft, ExternalLink } from "lucide-react"
 import { ProjectFormDialog } from "@/components/crm/project-form-dialog"
 import { DeleteButton } from "@/components/crm/delete-button"
 import { deleteProjectAction } from "./actions"
@@ -9,6 +9,8 @@ import { deleteProjectAction } from "./actions"
 export const metadata = {
   title: "Manage Projects - bienzoli CRM",
 }
+
+export const dynamic = "force-dynamic"
 
 export default async function ProjectsPage() {
   const projects = await getProjects()

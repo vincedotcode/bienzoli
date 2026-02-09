@@ -13,6 +13,8 @@ export const metadata: Metadata = {
   description: "Manage leads and track your pipeline.",
 }
 
+export const dynamic = "force-dynamic"
+
 async function DashboardContent({
   searchParams,
 }: {
