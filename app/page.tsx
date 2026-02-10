@@ -42,9 +42,9 @@ export default function Page() {
         <AISection />
         <HowItWorks />
         <Suspense fallback={<SectionSkeleton />}>
-          <ProjectsShowcase />
+           {/* <ProjectsShowcase /> */}
         </Suspense>
-        {/* <ProductPreview /> */}
+         <ProductPreview /> 
         <Suspense fallback={<SectionSkeleton />}>
           {/* <Testimonials /> */}
         </Suspense>
