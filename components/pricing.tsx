@@ -114,7 +114,7 @@ export function Pricing() {
       cta: "Book a consultation",
       ctaHref:
         "https://wa.me/23057901383?text=Hi%20BIENZOLI,%20I%20want%20to%20book%20a%20consultation%20for%20LE%20MORNE.",
-      tone: "emerald",
+      tone: "lagoon",
       highlighted: false,
     },
   ]
@@ -161,7 +161,7 @@ export function Pricing() {
                   ? "bg-gradient-to-r from-transparent via-lagoon to-transparent"
                   : tier.tone === "coral"
                     ? "bg-gradient-to-r from-transparent via-coral to-transparent"
-                    : "bg-gradient-to-r from-transparent via-emerald-400 to-transparent"
+                    : "bg-gradient-to-r from-transparent via-lagoon/40 to-transparent"
               }`} />
               {tier.highlighted && (
                 <span className="absolute -top-3 left-6 rounded-full bg-coral px-3 py-1 text-[11px] font-semibold text-white">
@@ -170,7 +170,7 @@ export function Pricing() {
               )}
 
               <p className={`text-xs font-semibold tracking-[0.14em] ${
-                tier.tone === "lagoon" ? "text-lagoon" : tier.tone === "coral" ? "text-coral" : "text-emerald-400"
+                tier.tone === "lagoon" ? "text-lagoon" : "text-coral"
               }`}>{tier.city}</p>
               <h3 className="mt-2 text-balance text-lg font-semibold text-foreground">{tier.name}</h3>
               <div className="mt-5">

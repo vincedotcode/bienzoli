@@ -1,19 +1,31 @@
 import React from "react"
 import type { Metadata, Viewport } from "next"
-import { Space_Grotesk, JetBrains_Mono } from "next/font/google"
+import { Space_Grotesk, JetBrains_Mono, DM_Sans } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LocaleProvider } from "@/components/locale-provider"
 import "./globals.css"
 
+// Display font: Space Grotesk — for headlines, h1/h2/h3, overlines only
 const spaceGrotesk = Space_Grotesk({
   subsets: ["latin"],
   variable: "--font-space-grotesk",
+  display: "swap",
 })
 
+// Body font: DM Sans — for all body copy, nav, buttons, labels, form text
+const dmSans = DM_Sans({
+  subsets: ["latin"],
+  variable: "--font-dm-sans",
+  display: "swap",
+  weight: ["400", "500", "600"],
+})
+
+// Mono font: JetBrains Mono — for code, URL bars, tracking-wide labels
 const jetbrainsMono = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-jetbrains-mono",
+  display: "swap",
 })
 
 export const metadata: Metadata = {
@@ -170,7 +182,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${spaceGrotesk.variable} ${jetbrainsMono.variable}`}
+      className={`${spaceGrotesk.variable} ${dmSans.variable} ${jetbrainsMono.variable}`}
       suppressHydrationWarning
     >
       <head>
@@ -182,7 +194,7 @@ export default function RootLayout({
       <body className="font-sans antialiased">
         <ThemeProvider
           attribute="class"
-          defaultTheme="dark"
+          defaultTheme="light"
           enableSystem
           disableTransitionOnChange
         >
