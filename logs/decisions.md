@@ -5,6 +5,70 @@ One entry per decision. Most recent at top.
 
 ---
 
+## 2026-02-25 — TIKTOK INTRO VIDEO CREATED (REMOTION)
+
+**What changed:** Created 15-second TikTok intro video for bienzoli using Remotion. Full 7-scene structure, 3-layer audio system, spring-based animations throughout, bienzoli design system colors + fonts baked in.
+
+**Why:** First piece of video content for bienzoli marketing. Designed to hook Mauritian small business owners on TikTok/Reels/Shorts. Demonstrates the brand, the speed promise, the features, and the pricing in exactly 15 seconds.
+
+**Structure:**
+- 7 scenes: Hook → Problem → Transformation → Speed → Features → Price → CTA
+- 3 audio layers: ambient beat (loop) + SFX (frame-accurate) + tick sounds (counter)
+- Glitch transition as signature moment (Scene 3: bad → beautiful website reveal)
+- Kreol line: "Mo build website ki fer bizness grandi." in Scene 6
+
+**Files created:**
+- `content/videos/tiktok-intro/` — full Remotion project (15 files)
+- `remotion.config.ts` — project root config pointing at tiktok public dir
+
+**Audio:** 8 royalty-free files needed. See `content/videos/tiktok-intro/public/audio/README.md`.
+After adding files: set `AUDIO_ENABLED = true` in `TikTokIntro.tsx`.
+
+**Commands:**
+- `npm run video:preview` — Remotion Studio (live preview)
+- `npm run video:render` — export to `out/tiktok-intro.mp4`
+
+**Tech:** Remotion 4.x, @remotion/google-fonts (Space Grotesk + DM Sans + JetBrains Mono), @remotion/media (Audio). All colors from design system dark-mode tokens (§9.2 specifies dark for social).
+
+---
+
+## 2026-02-25 — GOOGLE DRIVE SYNC IMPLEMENTATION
+
+**What changed:** Implemented full Google Drive sync suite (Agent 09 — Cloud Archivist activation).
+
+**Files created:** `scripts/gdrive-init.mjs`, `scripts/sync-to-drive.mjs`, `lib/gdrive/sync.ts` (replaced stub). Installed `googleapis` + `mime-types`. Added `gdrive:init` and `gdrive:sync` npm scripts.
+
+**Auth:** OAuth2 with refresh token. Env var names: `GOOGLE_CLIENT_ID`, `GOOGLE_CLIENT_SECRET`, `GOOGLE_REFRESH_TOKEN`, `GDRIVE_ROOT_FOLDER_ID`.
+
+---
+
+## 2026-02-25 — FULL CONTENT EXPANSION OF AGENCY SYSTEM
+
+**What changed:** Expanded every stub document from the 2026-02-24 session to full, actionable content. Prior session created the structure; this session filled it with complete, usable material that any agent can execute from a cold session.
+
+**Scope of expansion:**
+
+All 11 agent spec files expanded from ~45-line stubs to 150–200+ line full specs with all 10 required sections (role description, trigger words, responsibilities, key knowledge, input/output, files read/written, handoff rules, quality checks).
+
+All 5 skills files expanded from ~20-line outlines to 100–200+ line complete processes with phase-by-phase steps, prerequisites, exit criteria, and quality checks.
+
+All 4 case studies expanded from ~35-line outlines to 80–120+ line published case studies with challenge analysis, solution reasoning, full feature lists, PageSpeed results, and strategic insights.
+
+**Other changes:**
+- `docs/business/roadmap.md` updated to reflect completed Phase A items
+- Next.js build verified: compiles successfully (7.2s, all routes generated, no errors)
+
+**Why:**
+Stub documents are not operationally usable. An agent reading a 45-line brand-guardian.md cannot actually enforce brand standards. A 20-line client-site-build.md cannot guide a site build. This expansion makes the system genuinely executable — not just structured.
+
+**Files updated:**
+`docs/agents/*.md` (all 11), `docs/skills/*.md` (all 5), `content/case-studies/*.md` (all 4), `docs/business/roadmap.md`
+
+**Decision maker:** AGENT 07 — Self-Architect
+**Session:** 2026-02-25
+
+---
+
 ## 2026-02-24 — COMPLETE AGENCY SYSTEM BUILD
 
 **What changed:** Created the full bienzoli agency operating system — business documents, market research docs, complete agent specs, skills docs, content infrastructure, client templates, revenue tracker, and Google Drive sync scaffolding.

@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(wc -l /Users/vinceerkadoo/Desktop/work/bienzoli/docs/business/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/docs/agents/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/docs/skills/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/docs/market/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/docs/brand/voice-and-tone.md /Users/vinceerkadoo/Desktop/work/bienzoli/logs/clients.md /Users/vinceerkadoo/Desktop/work/bienzoli/content/case-studies/*.md)",
+      "Bash(npm run build)",
+      "Bash(/Users/vinceerkadoo/.nvm/versions/node/v22.13.0/bin/npm run build)",
+      "Bash(export PATH=\"/usr/local/bin:/opt/homebrew/bin:$PATH\")",
+      "Bash(node --version)",
+      "Bash(npx --version)",
+      "Bash(bun --version)",
+      "Bash(node -e \"console.log\\(''Node working''\\)\")",
+      "Bash(node -e \"require\\(''./node_modules/.bin/../next''\\)\")",
+      "Bash(timeout 90 node node_modules/.bin/next build)",
+      "Bash(node node_modules/.bin/next build)",
+      "Bash(wc -l /Users/vinceerkadoo/Desktop/work/bienzoli/docs/agents/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/docs/skills/*.md /Users/vinceerkadoo/Desktop/work/bienzoli/content/case-studies/*.md)",
+      "Bash(node node_modules/.bin/npm install googleapis)",
+      "Bash(node -e \"const {execSync} = require\\(''child_process''\\); execSync\\(''npm install googleapis'', {stdio:''inherit''}\\)\")",
+      "Read(//usr/local/bin/**)",
+      "Bash(/opt/homebrew/bin/npm install googleapis)"
+    ]
+  }
+}

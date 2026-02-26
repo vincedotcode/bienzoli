@@ -4,10 +4,15 @@
 - [x] Register vincedotcode ltd (BRN done)
 - [x] Build bienzoli.com landing page
 - [x] Create CLAUDE.md master context
-- [x] Create design system
+- [x] Create design system (`docs/brand/design-system.md`)
+- [x] Create all business documents (contract, invoice, onboarding, outreach scripts, packages, referral programme)
+- [x] Write outreach scripts (English + Kreol, all objection handling)
+- [x] Create all agent spec files (11 agents, full 10-section specs)
+- [x] Create all skills docs (5 skills, full step-by-step processes)
+- [x] Create portfolio case studies (Nickel Sew, KeyGo, DS Nails, Ziyaad Ben Eydatoula)
+- [x] Set up Google Drive sync scaffold (lib/gdrive/sync.ts)
 - [ ] Set up professional email (hello@bienzoli.com, vince@bienzoli.com)
-- [ ] Create all business documents (contract, invoice, onboarding)
-- [ ] Write outreach scripts
+- [ ] Complete Google Drive OAuth setup and populate folder IDs
 - [ ] Update bienzoli.com with portfolio, new packages, testimonials
 - [ ] Launch outreach campaign — target first 5 clients
 - [ ] Set up Google Business Profile for bienzoli

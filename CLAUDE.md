@@ -660,6 +660,27 @@ New client enquiry (WhatsApp / form / DM)
 
 ---
 
+## Content Production
+
+### Video (Remotion)
+
+All videos live in `content/videos/[video-name]/`.
+
+**Spec:**
+- Format: 9:16 vertical (1080×1920), 30fps
+- Colors and fonts MUST match `docs/brand/design-system.md` — dark-mode tokens for social (§9.2)
+- No CSS transitions or Tailwind animation classes — all animation via `useCurrentFrame()`, `spring()`, `interpolate()`
+- Audio: 3-layer approach (ambient beat loop + frame-timed SFX + detail sounds)
+
+**Commands:**
+- `npm run video:preview` — Remotion Studio live preview
+- `npm run video:render` — export MP4 to `out/`
+
+**Current videos:**
+- `content/videos/tiktok-intro/` — 15-second bienzoli intro for TikTok/Reels/Shorts. Set `AUDIO_ENABLED = true` after sourcing audio files (see `public/audio/README.md`).
+
+---
+
 *bienzoli Agency System — initialized February 2026*
 *Legal entity: vincedotcode ltd — Mauritius*
 *Self-maintained by Claude Code. Update this file as the system grows.*
