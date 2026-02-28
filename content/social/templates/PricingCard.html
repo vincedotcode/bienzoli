@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    padding: 64px;
+    position: relative;
+  }
+
+  .glow {
+    position: absolute; top: -100px; right: -100px;
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, hsla(199,89%,48%,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 52px;
+  }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: hsl(199, 89%, 48%); }
+  .tag {
+    font-size: 13px; font-weight: 600;
+    background: hsla(24,94%,53%,0.1);
+    border: 1px solid hsla(24,94%,53%,0.25);
+    color: hsl(24, 94%, 53%);
+    padding: 6px 16px; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.8px;
+  }
+
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px; font-weight: 700;
+    letter-spacing: -1.5px; line-height: 1.1;
+    margin-bottom: 40px;
+  }
+  .headline em { font-style: normal; color: hsl(199, 89%, 48%); }
+
+  /* Package grid */
+  .packages { display: flex; gap: 20px; flex: 1; }
+
+  .pkg {
+    flex: 1;
+    background: hsl(225, 12%, 9%);
+    border: 1px solid hsl(225, 10%, 16%);
+    border-radius: 16px;
+    padding: 28px 24px;
+    display: flex; flex-direction: column;
+    gap: 16px;
+    position: relative;
+  }
+  .pkg.featured {
+    border-color: hsla(199,89%,48%,0.5);
+    background: hsla(199,89%,48%,0.05);
+  }
+  .pkg.featured::before {
+    content: 'MOST POPULAR';
+    position: absolute; top: -1px; left: 50%; transform: translateX(-50%);
+    background: hsl(199,89%,48%);
+    color: hsl(225, 16%, 5%);
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 10px; font-weight: 500;
+    letter-spacing: 1.5px;
+    padding: 4px 12px;
+    border-radius: 0 0 8px 8px;
+  }
+
+  .pkg-name {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px; letter-spacing: 2px;
+    color: hsl(210, 15%, 50%); text-transform: uppercase;
+  }
+  .pkg-price {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px; font-weight: 700;
+    color: hsl(210, 20%, 95%);
+    letter-spacing: -1px;
+  }
+  .pkg-price .currency { font-size: 18px; color: hsl(210, 15%, 55%); vertical-align: super; margin-right: 2px; }
+  .pkg-delivery {
+    font-size: 13px; color: hsl(24, 94%, 53%);
+    background: hsla(24,94%,53%,0.08);
+    padding: 4px 10px; border-radius: 6px;
+    width: fit-content;
+  }
+  .pkg-features { display: flex; flex-direction: column; gap: 8px; margin-top: 4px; }
+  .pkg-feature {
+    font-size: 14px; color: hsl(210, 15%, 65%);
+    display: flex; align-items: flex-start; gap: 8px; line-height: 1.4;
+  }
+  .check { color: hsl(199, 89%, 48%); flex-shrink: 0; }
+
+  .footer {
+    margin-top: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid hsl(225, 10%, 14%);
+    padding-top: 24px;
+  }
+  .footer-note { font-size: 15px; color: hsl(210, 15%, 45%); }
+  .footer-cta { font-size: 15px; color: hsl(199, 89%, 48%); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="header">
+    <span class="brand">bienzoli</span>
+    <span class="tag">Pricing</span>
+  </div>
+
+  <div class="headline">{{headline}}</div>
+
+  <div class="packages">
+    <div class="pkg">
+      <div class="pkg-name">Flic en Flac</div>
+      <div class="pkg-price"><span class="currency">Rs</span>8,000</div>
+      <div class="pkg-delivery">24–48 hours</div>
+      <div class="pkg-features">
+        <div class="pkg-feature"><span class="check">✓</span> Single-page micro-site</div>
+        <div class="pkg-feature"><span class="check">✓</span> WhatsApp button</div>
+        <div class="pkg-feature"><span class="check">✓</span> Domain + hosting 1yr</div>
+        <div class="pkg-feature"><span class="check">✓</span> 14-day support</div>
+      </div>
+    </div>
+
+    <div class="pkg featured">
+      <div class="pkg-name">Port Louis</div>
+      <div class="pkg-price"><span class="currency">Rs</span>18,000</div>
+      <div class="pkg-delivery">3 days</div>
+      <div class="pkg-features">
+        <div class="pkg-feature"><span class="check">✓</span> Full one-page site</div>
+        <div class="pkg-feature"><span class="check">✓</span> Google Analytics</div>
+        <div class="pkg-feature"><span class="check">✓</span> Google Business setup</div>
+        <div class="pkg-feature"><span class="check">✓</span> 30-day support</div>
+      </div>
+    </div>
+
+    <div class="pkg">
+      <div class="pkg-name">Grand Baie</div>
+      <div class="pkg-price"><span class="currency">Rs</span>35,000</div>
+      <div class="pkg-delivery">5–7 days</div>
+      <div class="pkg-features">
+        <div class="pkg-feature"><span class="check">✓</span> Multi-page (5 pages)</div>
+        <div class="pkg-feature"><span class="check">✓</span> AI Chatbot</div>
+        <div class="pkg-feature"><span class="check">✓</span> Monthly analytics</div>
+        <div class="pkg-feature"><span class="check">✓</span> 90-day support</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-note">50% upfront · 50% on delivery · Monthly options available</div>
+    <div class="footer-cta">bienzoli.com →</div>
+  </div>
+</body>
+</html>

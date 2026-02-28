@@ -1,0 +1,86 @@
+name: Daily Social Post — bienzoli Marketing Engine
+
+# Runs at 10:00 AM MUT (Mauritius Time = UTC+4)
+# 10:00 MUT = 06:00 UTC
+on:
+  schedule:
+    - cron: '0 6 * * *'
+  workflow_dispatch:
+    inputs:
+      date:
+        description: 'Post date (YYYY-MM-DD). Defaults to today.'
+        required: false
+        default: ''
+      dry_run:
+        description: 'Dry run (no actual posting)'
+        required: false
+        default: 'false'
+        type: boolean
+
+jobs:
+  post:
+    name: Generate image + post to Facebook
+    runs-on: ubuntu-latest
+
+    steps:
+      # ── Checkout ────────────────────────────────────────────────────────────
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      # ── Node setup ──────────────────────────────────────────────────────────
+      - name: Set up Node.js 22
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+
+      # ── Install dependencies ─────────────────────────────────────────────────
+      - name: Install dependencies
+        run: npm ci --legacy-peer-deps
+
+      # ── Install Chromium for Puppeteer ───────────────────────────────────────
+      - name: Install Chromium
+        run: npx puppeteer browsers install chrome
+
+      # ── Determine date ───────────────────────────────────────────────────────
+      - name: Set post date
+        id: date
+        run: |
+          if [ -n "${{ github.event.inputs.date }}" ]; then
+            echo "POST_DATE=${{ github.event.inputs.date }}" >> $GITHUB_ENV
+          else
+            # Today in UTC+4 (MUT)
+            echo "POST_DATE=$(TZ=Indian/Mauritius date +%Y-%m-%d)" >> $GITHUB_ENV
+          fi
+          echo "Post date: $POST_DATE"
+
+      # ── Run daily post pipeline ──────────────────────────────────────────────
+      - name: Run post-today pipeline
+        env:
+          FACEBOOK_PAGE_ID: ${{ secrets.FACEBOOK_PAGE_ID }}
+          FACEBOOK_PAGE_ACCESS_TOKEN: ${{ secrets.FACEBOOK_PAGE_ACCESS_TOKEN }}
+        run: |
+          if [ "${{ github.event.inputs.dry_run }}" = "true" ]; then
+            node scripts/post-today.mjs --date "$POST_DATE" --dry-run
+          else
+            node scripts/post-today.mjs --date "$POST_DATE"
+          fi
+
+      # ── Commit archive + performance log back to repo ─────────────────────
+      - name: Commit post archive
+        if: github.event.inputs.dry_run != 'true'
+        run: |
+          git config user.name "bienzoli Marketing Engine"
+          git config user.email "hello@bienzoli.com"
+          git add content/social/archive/ logs/content-performance.md || true
+          git diff --staged --quiet || git commit -m "chore: archive social post $POST_DATE [skip ci]"
+          git push
+
+      # ── Check queue level and warn if low ─────────────────────────────────
+      - name: Check queue level
+        run: |
+          COUNT=$(ls content/social/queue/*.json 2>/dev/null | grep -E '[0-9]{4}-[0-9]{2}-[0-9]{2}' | wc -l | tr -d ' ')
+          echo "Posts remaining in queue: $COUNT"
+          if [ "$COUNT" -lt 7 ]; then
+            echo "::warning::Queue is low ($COUNT posts). Run npm run social:generate-week to replenish."
+          fi

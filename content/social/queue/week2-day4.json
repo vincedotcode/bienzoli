@@ -1,0 +1,14 @@
+{
+  "date": "week2-day4",
+  "pillar": "education",
+  "template": "TipCard",
+  "caption": "Web tip: Why your website needs to load fast on mobile — not just desktop.\n\nIn Mauritius, over 75% of internet traffic is mobile. If your site isn't optimised for mobile, you're turning away 3 out of 4 visitors.\n\nWhat slows down mobile sites:\n✗ Uncompressed images (common on WordPress)\n✗ Render-blocking JavaScript\n✗ No lazy loading\n✗ Shared hosting servers\n\nWhat we do instead:\n✓ Automatic image compression via Next.js Image component\n✓ Edge CDN (Vercel) — fastest response globally\n✓ Code-split JavaScript — only loads what's needed\n✓ PageSpeed 95+ target on every single build\n\nMobile-first isn't a feature. It's the minimum.\n\n→ bienzoli.com\n\n#WebTips #MobileFirst #PageSpeed #NextJS #MauritiusDev",
+  "templateData": {
+    "tipNumber": "07",
+    "category": "Performance",
+    "headline": "Mobile speed is not <em>optional</em>.",
+    "bodyText": "75%+ of Mauritius internet traffic is mobile. Every second of load time costs you visitors. Here's what we optimise on every single build.",
+    "codeSnippet": "// Next.js Image — automatic optimisation\nimport Image from 'next/image'\n\n<Image\n  src=\"/hero.jpg\"\n  width={1200} height={600}\n  // Auto WebP conversion\n  // Auto lazy loading\n  // Auto srcset generation\n/>"
+  },
+  "imagePath": null
+}

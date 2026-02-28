@@ -10,7 +10,13 @@
     "gdrive:init": "node --env-file=.env.local scripts/gdrive-init.mjs",
     "gdrive:sync": "node --env-file=.env.local scripts/sync-to-drive.mjs",
     "video:preview": "npx remotion studio content/videos/tiktok-intro/src/Root.tsx",
-    "video:render": "npx remotion render content/videos/tiktok-intro/src/Root.tsx TikTokIntro out/tiktok-intro.mp4"
+    "video:render": "npx remotion render content/videos/tiktok-intro/src/Root.tsx TikTokIntro out/tiktok-intro.mp4",
+    "social:generate-week": "node --env-file=.env.local scripts/generate-week.mjs",
+    "social:generate-images": "node --env-file=.env.local scripts/generate-social-image.mjs",
+    "social:post-today": "node --env-file=.env.local scripts/post-today.mjs",
+    "social:post-facebook": "node --env-file=.env.local scripts/facebook-post.mjs",
+    "social:dry-run": "node --env-file=.env.local scripts/post-today.mjs --dry-run",
+    "engagement:fetch": "node --env-file=.env.local scripts/fetch-engagement.mjs"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.9.1",
@@ -51,6 +57,7 @@
     "cmdk": "1.1.1",
     "date-fns": "4.1.0",
     "embla-carousel-react": "8.5.1",
+    "form-data": "^4.0.5",
     "framer-motion": "^12.33.0",
     "googleapis": "^171.4.0",
     "input-otp": "1.4.1",
@@ -58,6 +65,7 @@
     "mime-types": "^3.0.2",
     "next": "16.1.6",
     "next-themes": "^0.4.6",
+    "puppeteer": "^24.37.5",
     "react": "^19",
     "react-day-picker": "8.10.1",
     "react-dom": "^19",
@@ -65,6 +73,7 @@
     "react-resizable-panels": "^2.1.7",
     "recharts": "2.15.0",
     "remotion": "^4.0.429",
+    "sharp": "^0.34.5",
     "sonner": "^1.7.1",
     "swr": "^2.4.0",
     "tailwind-merge": "^2.5.5",

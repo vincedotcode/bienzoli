@@ -1,0 +1,19 @@
+{
+  "date": "2026-03-02",
+  "pillar": "technical-authority",
+  "template": "SpeedTestCard",
+  "caption": "Why does your website score 38 on PageSpeed while bienzoli sites score 95+?\n\nIt's not luck. It's Next.js — the same framework used by TikTok, Notion, and Twitch.\n\nMost agencies in Mauritius ship WordPress. Fast themes with heavy plugins that bloat your page to 4MB and take 8 seconds to load on mobile.\n\nWe build from scratch. No plugins, no bloat, just clean code that loads in under 1 second.\n\nFaster site = better Google ranking = more customers finding you. 📈\n\n→ bienzoli.com\n\n#WebPerformance #PageSpeed #NextJS #MauritiusBusiness #WebDevelopment",
+  "templateData": {
+    "headline": "Speed tells the story.",
+    "clientSite": "bienzoli build vs. WordPress",
+    "competitorLabel": "Typical WordPress site",
+    "competitorScore": "38",
+    "competitorDash": "108",
+    "competitorBarPct": "38",
+    "bienzoScore": "97",
+    "bienzoDash": "275",
+    "bienzoBarPct": "97",
+    "testDate": "Feb 2026"
+  },
+  "imagePath": null
+}

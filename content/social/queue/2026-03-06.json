@@ -1,0 +1,24 @@
+{
+  "date": "2026-03-06",
+  "pillar": "technical-authority",
+  "template": "BuildProcessCard",
+  "caption": "How we build a website in 48 hours (without cutting corners):\n\nStep 1 — Brief call (30 min): we learn your business, your clients, your goals.\nStep 2 — Design sprint (4–6 hrs): mobile-first design in Figma, exact colours, fonts, layout.\nStep 3 — Build (12–16 hrs): Next.js code, performance-optimised, responsive on every screen.\nStep 4 — Review + launch (2 hrs): you approve, we connect domain, go live.\n\nNo back-and-forth for weeks. No \"still working on it.\" Just a live website by Wednesday if you brief us Monday.\n\nThis is the bienzoli process. It works. ⚡\n\n→ bienzoli.com\n\n#WebDevelopment #AgencyLife #48HourWebsite #Mauritius",
+  "templateData": {
+    "headline": "A website in <em>48 hours</em>. Exactly how it works.",
+    "subhead": "The bienzoli build process — no mystery, no delays.",
+    "step1Title": "Brief call",
+    "step1Desc": "30 minutes. We learn your business, clients, goals, and brand preferences.",
+    "step1Time": "Day 1 · 30 min",
+    "step2Title": "Design sprint",
+    "step2Desc": "Mobile-first layout in Figma. Colours, fonts, sections — approved by you before we code.",
+    "step2Time": "Day 1 · 4–6 hrs",
+    "step3Title": "Build",
+    "step3Desc": "Next.js code, performance-optimised, fully responsive on all screen sizes.",
+    "step3Time": "Day 1–2 · 12–16 hrs",
+    "step4Title": "Review + go live",
+    "step4Desc": "You approve, we connect domain, DNS propagates, site is live.",
+    "step4Time": "Day 2 · 2 hrs",
+    "totalTime": "48 hrs"
+  },
+  "imagePath": null
+}

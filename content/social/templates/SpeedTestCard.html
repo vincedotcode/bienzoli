@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    padding: 64px;
+    position: relative;
+  }
+
+  .glow-left {
+    position: absolute; bottom: 0; left: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, hsla(0,85%,55%,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .glow-right {
+    position: absolute; bottom: 0; right: -100px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, hsla(199,89%,48%,0.14) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 40px;
+  }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: hsl(199, 89%, 48%); }
+  .tag {
+    font-size: 13px; font-weight: 600;
+    background: hsla(199,89%,48%,0.1);
+    border: 1px solid hsla(199,89%,48%,0.25);
+    color: hsl(199, 89%, 55%);
+    padding: 6px 16px; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.8px;
+  }
+
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 44px; font-weight: 700;
+    letter-spacing: -1.5px; line-height: 1.15;
+    margin-bottom: 12px;
+  }
+  .subhead { font-size: 18px; color: hsl(210, 15%, 50%); margin-bottom: 48px; }
+
+  /* Comparison */
+  .comparison { display: flex; gap: 24px; flex: 1; align-items: stretch; }
+
+  .score-block {
+    flex: 1;
+    background: hsl(225, 12%, 9%);
+    border: 1px solid hsl(225, 10%, 16%);
+    border-radius: 20px;
+    padding: 40px 36px;
+    display: flex; flex-direction: column; gap: 20px;
+    position: relative;
+  }
+  .score-block.us {
+    border-color: hsla(199,89%,48%,0.5);
+    background: hsla(199,89%,48%,0.04);
+  }
+
+  .score-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 2px;
+    text-transform: uppercase;
+    color: hsl(210, 15%, 45%);
+  }
+  .score-label.us-label { color: hsl(199, 89%, 55%); }
+
+  /* Donut score */
+  .score-visual {
+    display: flex; flex-direction: column; align-items: center; gap: 16px;
+  }
+  .score-ring {
+    width: 180px; height: 180px; position: relative;
+  }
+  .score-ring svg {
+    width: 100%; height: 100%;
+    transform: rotate(-90deg);
+  }
+  .score-ring .track { fill: none; stroke: hsl(225, 10%, 16%); stroke-width: 12; }
+  .score-ring .fill-bad  { fill: none; stroke: hsl(0, 75%, 55%); stroke-width: 12; stroke-linecap: round; }
+  .score-ring .fill-good { fill: none; stroke: hsl(199, 89%, 48%); stroke-width: 12; stroke-linecap: round; }
+
+  .score-number {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 56px; font-weight: 700;
+    color: hsl(210, 20%, 95%);
+    line-height: 1;
+  }
+  .score-number.bad { color: hsl(0, 75%, 65%); }
+  .score-number.good { color: hsl(199, 89%, 48%); }
+
+  .score-tag {
+    font-size: 14px; font-weight: 600;
+    padding: 6px 18px; border-radius: 100px;
+  }
+  .score-tag.bad { background: hsla(0,75%,55%,0.12); color: hsl(0,75%,65%); }
+  .score-tag.good { background: hsla(199,89%,48%,0.12); color: hsl(199,89%,65%); }
+
+  .score-stack { font-size: 14px; color: hsl(210, 15%, 50%); text-align: center; }
+  .score-stack strong { color: hsl(210, 20%, 80%); }
+
+  /* VS divider */
+  .vs-divider {
+    display: flex; align-items: center; justify-content: center;
+    width: 56px; flex-shrink: 0;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 700;
+    color: hsl(210, 15%, 40%);
+  }
+
+  /* Footer */
+  .footer {
+    margin-top: 36px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid hsl(225, 10%, 14%);
+    padding-top: 24px;
+  }
+  .footer-note { font-size: 15px; color: hsl(210, 15%, 40%); }
+  .footer-cta { font-size: 15px; color: hsl(199, 89%, 48%); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="glow-left"></div>
+  <div class="glow-right"></div>
+
+  <div class="header">
+    <span class="brand">bienzoli</span>
+    <span class="tag">Speed Test</span>
+  </div>
+
+  <div class="headline">{{headline}}</div>
+  <div class="subhead">PageSpeed Insights · Mobile · {{clientSite}}</div>
+
+  <div class="comparison">
+    <!-- Competitor -->
+    <div class="score-block">
+      <div class="score-label">{{competitorLabel}}</div>
+      <div class="score-visual">
+        <div class="score-ring" style="position:relative;">
+          <svg viewBox="0 0 180 180">
+            <circle class="track" cx="90" cy="90" r="72"/>
+            <circle class="fill-bad" cx="90" cy="90" r="72"
+              stroke-dasharray="{{competitorDash}} 452"
+              stroke-dashoffset="0"/>
+          </svg>
+          <div class="score-number bad" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">{{competitorScore}}</div>
+        </div>
+        <div class="score-tag bad">Needs Improvement</div>
+        <div class="score-stack"><strong>WordPress</strong><br/>Slow server · Unoptimised images</div>
+      </div>
+    </div>
+
+    <div class="vs-divider">VS</div>
+
+    <!-- bienzoli -->
+    <div class="score-block us">
+      <div class="score-label us-label">bienzoli build</div>
+      <div class="score-visual">
+        <div class="score-ring" style="position:relative;">
+          <svg viewBox="0 0 180 180">
+            <circle class="track" cx="90" cy="90" r="72"/>
+            <circle class="fill-good" cx="90" cy="90" r="72"
+              stroke-dasharray="{{bienzoDash}} 452"
+              stroke-dashoffset="0"/>
+          </svg>
+          <div class="score-number good" style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);">{{bienzoScore}}</div>
+        </div>
+        <div class="score-tag good">Excellent</div>
+        <div class="score-stack"><strong>Next.js · Edge CDN</strong><br/>Image optimisation · Zero bloat</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-note">Tested {{testDate}} on PageSpeed Insights</div>
+    <div class="footer-cta">bienzoli.com →</div>
+  </div>
+</body>
+</html>

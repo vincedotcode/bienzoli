@@ -1,0 +1,17 @@
+{
+  "date": "week2-day7",
+  "pillar": "offer",
+  "template": "CallToActionCard",
+  "caption": "No website yet? Let's fix that this week.\n\nStart with Flic en Flac: a clean, fast, professional micro-site with your services, WhatsApp button, and contact info — live in 48 hours.\n\nRs 8,000. That's it.\nOr Rs 800/month if you prefer.\n\nDomain + hosting included for the first year. 14 days of support after launch.\n\nThis is the fastest way to go from \"no web presence\" to \"I'm online and professional.\"\n\n→ Message us today on bienzoli.com or WhatsApp\n\nLimited spots available each week. We build one project at a time. 🔒\n\n#bienzoli #FlicEnFlac #MauritiusSmallBusiness #WebDesign #GoOnline",
+  "templateData": {
+    "urgencyTag": "Live in 48 hours",
+    "headline": "Your first website. <em>This week.</em>",
+    "subhead": "Clean, fast, professional. Live in 48 hours. Starting from Rs 8,000 — or Rs 800/month.",
+    "feature1": "Domain + hosting included",
+    "feature2": "WhatsApp button built in",
+    "feature3": "Mobile-first, 95+ PageSpeed",
+    "ctaText": "Get started at bienzoli.com",
+    "ctaSub": "Limited spots per week"
+  },
+  "imagePath": null
+}

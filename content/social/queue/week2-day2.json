@@ -1,0 +1,20 @@
+{
+  "date": "week2-day2",
+  "pillar": "technical-authority",
+  "template": "StatCard",
+  "caption": "53% of mobile users abandon a site that takes more than 3 seconds to load.\n\nRead that again.\n\nMore than half your potential customers — gone — before they even see your business.\n\nSpeed isn't a tech detail. It's a revenue decision.\n\nbienzoli sites load in under 1 second on mobile. That's not a claim — that's a PageSpeed score of 95+, verified and documented.\n\nYour competitor's WordPress site? 6–8 seconds.\n\nEvery second costs you customers. 📉\n\n→ bienzoli.com — Performance is non-negotiable.\n\n#WebPerformance #MobileFirst #ConversionRate #MauritiusBusiness",
+  "templateData": {
+    "overline": "Mobile Web Statistics · 2026",
+    "mainStat": "53",
+    "unit": "%",
+    "statLabel": "of mobile users abandon sites that load in 3+ seconds",
+    "context": "More than half your potential customers leave before seeing your business. Speed is a revenue decision, not a tech detail.",
+    "mini1Val": "< 1s",
+    "mini1Label": "bienzoli load time",
+    "mini2Val": "95+",
+    "mini2Label": "Our PageSpeed score",
+    "mini3Val": "6–8s",
+    "mini3Label": "WordPress average"
+  },
+  "imagePath": null
+}

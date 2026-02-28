@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    text-align: center;
+    padding: 80px;
+    position: relative;
+  }
+
+  .glow {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 1000px; height: 800px;
+    background: radial-gradient(ellipse, hsla(199,89%,48%,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .overline {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 14px; letter-spacing: 3px;
+    color: hsl(24, 94%, 53%); text-transform: uppercase;
+    margin-bottom: 32px;
+  }
+
+  /* Big number */
+  .big-stat {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 180px; font-weight: 700;
+    letter-spacing: -8px; line-height: 0.9;
+    color: hsl(199, 89%, 48%);
+    margin-bottom: 20px;
+    position: relative;
+  }
+  .big-stat .unit {
+    font-size: 80px;
+    letter-spacing: -3px;
+  }
+
+  .stat-label {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px; font-weight: 500;
+    color: hsl(210, 20%, 88%);
+    letter-spacing: -0.5px;
+    margin-bottom: 32px;
+  }
+
+  .stat-context {
+    font-size: 20px; color: hsl(210, 15%, 50%);
+    line-height: 1.6; max-width: 700px;
+    margin-bottom: 64px;
+  }
+
+  /* Mini stats row */
+  .mini-stats { display: flex; gap: 32px; justify-content: center; margin-bottom: 64px; }
+  .mini-stat {
+    display: flex; flex-direction: column; align-items: center; gap: 6px;
+    background: hsl(225, 12%, 9%);
+    border: 1px solid hsl(225, 10%, 16%);
+    padding: 20px 32px; border-radius: 16px;
+  }
+  .mini-stat .val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 36px; font-weight: 700;
+    color: hsl(210, 20%, 95%);
+  }
+  .mini-stat .lbl { font-size: 14px; color: hsl(210, 15%, 50%); }
+
+  .brand-footer {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: hsl(199, 89%, 48%); opacity: 0.6;
+  }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="overline">{{overline}}</div>
+
+  <div class="big-stat">{{mainStat}}<span class="unit">{{unit}}</span></div>
+  <div class="stat-label">{{statLabel}}</div>
+  <div class="stat-context">{{context}}</div>
+
+  <div class="mini-stats">
+    <div class="mini-stat">
+      <div class="val">{{mini1Val}}</div>
+      <div class="lbl">{{mini1Label}}</div>
+    </div>
+    <div class="mini-stat">
+      <div class="val">{{mini2Val}}</div>
+      <div class="lbl">{{mini2Label}}</div>
+    </div>
+    <div class="mini-stat">
+      <div class="val">{{mini3Val}}</div>
+      <div class="lbl">{{mini3Label}}</div>
+    </div>
+  </div>
+
+  <div class="brand-footer">bienzoli</div>
+</body>
+</html>

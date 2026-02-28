@@ -1,0 +1,15 @@
+{
+  "date": "week2-day1",
+  "pillar": "portfolio-proof",
+  "template": "PortfolioCard",
+  "caption": "KeyGo needed a car rental platform that could handle fleet display, bookings, and Mauritian payment methods — all in one site.\n\nWe delivered it in 5 days.\n\nFleet management display. Booking enquiry flow. MCB Juice & my.t money payment info. Full mobile optimisation.\n\nThis is what the Grand Baie package delivers. Custom, multi-page, built for conversion. 🚗\n\n→ bienzoli.com\n\n#KeyGo #CarRentalMauritius #WebDevelopment #MauritiusTech",
+  "templateData": {
+    "clientName": "KeyGo",
+    "projectType": "Car Rental Platform",
+    "projectUrl": "keygomu.vercel.app",
+    "deliveryTime": "5 days",
+    "packageName": "Grand Baie",
+    "pageSpeedScore": "94"
+  },
+  "imagePath": null
+}

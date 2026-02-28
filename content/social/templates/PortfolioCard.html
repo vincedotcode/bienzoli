@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    position: relative;
+  }
+
+  /* Radial glow */
+  .glow {
+    position: absolute; top: -200px; right: -200px;
+    width: 700px; height: 700px;
+    background: radial-gradient(circle, hsla(199,89%,48%,0.18) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .glow-coral {
+    position: absolute; bottom: -150px; left: -150px;
+    width: 500px; height: 500px;
+    background: radial-gradient(circle, hsla(24,94%,53%,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  /* Header bar */
+  .header {
+    padding: 56px 64px 0;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px; font-weight: 700;
+    color: hsl(199, 89%, 48%);
+    letter-spacing: -0.5px;
+  }
+  .tag {
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px; font-weight: 600;
+    color: hsl(24, 94%, 53%);
+    background: hsla(24,94%,53%,0.12);
+    border: 1px solid hsla(24,94%,53%,0.3);
+    padding: 6px 16px; border-radius: 100px;
+    letter-spacing: 0.5px; text-transform: uppercase;
+  }
+
+  /* Main image area */
+  .image-area {
+    margin: 40px 64px 0;
+    flex: 1;
+    background: hsl(225, 12%, 10%);
+    border: 1px solid hsl(225, 10%, 18%);
+    border-radius: 16px;
+    display: flex; align-items: center; justify-content: center;
+    overflow: hidden; position: relative;
+    min-height: 480px;
+  }
+  .image-placeholder {
+    display: flex; flex-direction: column; align-items: center; gap: 12px;
+    opacity: 0.3;
+  }
+  .image-placeholder svg { width: 64px; height: 64px; }
+  .image-placeholder span { font-size: 15px; color: hsl(210, 15%, 60%); }
+
+  /* Browser chrome overlay */
+  .browser-bar {
+    position: absolute; top: 0; left: 0; right: 0;
+    height: 44px;
+    background: hsl(225, 12%, 8%);
+    border-bottom: 1px solid hsl(225, 10%, 18%);
+    display: flex; align-items: center; padding: 0 16px; gap: 8px;
+  }
+  .dot { width: 12px; height: 12px; border-radius: 50%; }
+  .dot-r { background: #ff5f57; }
+  .dot-y { background: #febc2e; }
+  .dot-g { background: #28c840; }
+  .url-bar {
+    flex: 1; margin: 0 16px;
+    background: hsl(225, 10%, 14%);
+    border-radius: 6px; height: 24px;
+    display: flex; align-items: center; padding: 0 12px;
+    font-family: 'DM Sans', sans-serif; font-size: 12px;
+    color: hsl(210, 15%, 55%);
+  }
+
+  /* Bottom info */
+  .info {
+    padding: 40px 64px 56px;
+  }
+  .client-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 48px; font-weight: 700;
+    color: hsl(210, 20%, 95%);
+    letter-spacing: -1.5px; line-height: 1.1;
+    margin-bottom: 12px;
+  }
+  .project-meta {
+    display: flex; align-items: center; gap: 20px;
+  }
+  .meta-item {
+    font-size: 16px; color: hsl(210, 15%, 60%);
+    display: flex; align-items: center; gap: 8px;
+  }
+  .meta-item strong {
+    color: hsl(199, 89%, 48%); font-weight: 600;
+  }
+  .divider { width: 4px; height: 4px; border-radius: 50%; background: hsl(225, 10%, 30%); }
+
+  /* Score badge */
+  .score-badge {
+    display: flex; align-items: center; gap: 8px;
+    background: hsla(199,89%,48%,0.1);
+    border: 1px solid hsla(199,89%,48%,0.3);
+    border-radius: 100px;
+    padding: 8px 20px;
+    margin-top: 20px; width: fit-content;
+  }
+  .score-badge .score { font-family: 'Space Grotesk', sans-serif; font-size: 24px; font-weight: 700; color: hsl(199, 89%, 48%); }
+  .score-badge .label { font-size: 14px; color: hsl(210, 15%, 70%); }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+  <div class="glow-coral"></div>
+
+  <div class="header">
+    <span class="brand">bienzoli</span>
+    <span class="tag">Portfolio</span>
+  </div>
+
+  <div class="image-area">
+    <div class="browser-bar">
+      <div class="dot dot-r"></div>
+      <div class="dot dot-y"></div>
+      <div class="dot dot-g"></div>
+      <div class="url-bar">{{projectUrl}}</div>
+    </div>
+    <div class="image-placeholder">
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect width="64" height="64" rx="8" fill="hsl(225,10%,14%)"/>
+        <path d="M20 44L32 28L44 44" stroke="hsl(199,89%,48%)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle cx="44" cy="26" r="5" stroke="hsl(199,89%,48%)" stroke-width="2.5"/>
+      </svg>
+      <span>{{projectUrl}}</span>
+    </div>
+  </div>
+
+  <div class="info">
+    <div class="client-name">{{clientName}}</div>
+    <div class="project-meta">
+      <div class="meta-item"><strong>{{projectType}}</strong></div>
+      <div class="divider"></div>
+      <div class="meta-item">Delivered in <strong>{{deliveryTime}}</strong></div>
+      <div class="divider"></div>
+      <div class="meta-item"><strong>{{packageName}}</strong> package</div>
+    </div>
+    <div class="score-badge">
+      <span class="score">{{pageSpeedScore}}</span>
+      <span class="label">PageSpeed Score</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,23 @@
+{
+  "date": "week2-day5",
+  "pillar": "portfolio-proof",
+  "template": "BeforeAfterCard",
+  "caption": "Before and after. Same business. Same owner. 4 days apart.\n\nDS Nails had a Facebook page and zero Google presence. Now they have a full booking site with a service menu, gallery, pricing, and an auth system for regular clients.\n\nThe difference a real website makes isn't aesthetic — it's operational. Clients book online. Staff manage the schedule. The business runs smoother.\n\nThis is what we build. 💅\n\n→ bienzoli.com — Grand Baie package\n\n#DSNails #BeforeAndAfter #SalonWebsite #MauritiusBeauty #bienzoli",
+  "templateData": {
+    "clientName": "DS Nails",
+    "headline": "Same salon. 4 days. <em>Completely different</em> online presence.",
+    "beforeScore": "42",
+    "beforeBarPct": "42",
+    "beforeLoad": "7.2s",
+    "beforePlatform": "Facebook only",
+    "beforeMobile": "Not optimised",
+    "afterScore": "95",
+    "afterBarPct": "95",
+    "afterLoad": "0.8s",
+    "afterPlatform": "Next.js",
+    "afterMobile": "100% responsive",
+    "verdictText": "Full booking site, gallery, auth — delivered in 4 days.",
+    "scoreImprovement": "53"
+  },
+  "imagePath": null
+}

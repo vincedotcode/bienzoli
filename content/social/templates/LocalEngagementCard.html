@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    align-items: center; justify-content: center;
+    padding: 80px;
+    text-align: center;
+    position: relative;
+  }
+
+  .glow-center {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 900px; height: 700px;
+    background: radial-gradient(ellipse, hsla(199,89%,48%,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .flag {
+    font-size: 96px; margin-bottom: 32px;
+    filter: drop-shadow(0 0 32px hsla(199,89%,48%,0.3));
+  }
+
+  .kreol-line {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 52px; font-weight: 700;
+    letter-spacing: -1px; line-height: 1.15;
+    color: hsl(210, 20%, 95%);
+    margin-bottom: 28px;
+    max-width: 900px;
+  }
+  .kreol-line em {
+    font-style: normal;
+    color: hsl(199, 89%, 48%);
+  }
+
+  .english-line {
+    font-size: 22px; color: hsl(210, 15%, 55%);
+    line-height: 1.6; max-width: 750px;
+    margin-bottom: 56px;
+  }
+
+  /* Local features */
+  .local-features {
+    display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;
+    margin-bottom: 64px;
+  }
+  .feature-chip {
+    background: hsl(225, 12%, 10%);
+    border: 1px solid hsl(225, 10%, 18%);
+    padding: 12px 24px; border-radius: 100px;
+    font-size: 15px; font-weight: 500;
+    display: flex; align-items: center; gap: 10px;
+    color: hsl(210, 20%, 80%);
+  }
+  .feature-chip .icon { font-size: 20px; }
+
+  /* CTA */
+  .cta {
+    font-size: 18px; color: hsl(210, 15%, 50%);
+  }
+  .cta strong { color: hsl(199, 89%, 48%); font-weight: 600; }
+
+  /* Brand */
+  .brand-footer {
+    position: absolute; bottom: 52px;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: hsl(199, 89%, 48%); opacity: 0.6;
+  }
+  .tag-top {
+    position: absolute; top: 56px; right: 72px;
+    font-size: 13px; font-weight: 600;
+    background: hsla(24,94%,53%,0.1);
+    border: 1px solid hsla(24,94%,53%,0.25);
+    color: hsl(24, 94%, 53%);
+    padding: 6px 16px; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.8px;
+  }
+</style>
+</head>
+<body>
+  <div class="glow-center"></div>
+  <div class="tag-top">Moris 🇲🇺</div>
+
+  <div class="flag">{{flagEmoji}}</div>
+
+  <div class="kreol-line">{{kreolHeadline}}</div>
+  <div class="english-line">{{englishSubtitle}}</div>
+
+  <div class="local-features">
+    <div class="feature-chip"><span class="icon">💬</span> WhatsApp-first</div>
+    <div class="feature-chip"><span class="icon">💳</span> MCB Juice display</div>
+    <div class="feature-chip"><span class="icon">🌊</span> Made in Mauritius</div>
+    <div class="feature-chip"><span class="icon">⚡</span> 48h delivery</div>
+  </div>
+
+  <div class="cta">Ready to go live? → <strong>bienzoli.com</strong></div>
+
+  <div class="brand-footer">bienzoli</div>
+</body>
+</html>

@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    padding: 64px;
+    position: relative;
+  }
+
+  .glow {
+    position: absolute; top: 100px; left: 50%; transform: translateX(-50%);
+    width: 900px; height: 500px;
+    background: radial-gradient(ellipse, hsla(24,94%,53%,0.1) 0%, transparent 65%);
+    pointer-events: none;
+  }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 48px;
+  }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: hsl(199, 89%, 48%); }
+  .tag {
+    font-size: 13px; font-weight: 600;
+    background: hsla(24,94%,53%,0.1);
+    border: 1px solid hsla(24,94%,53%,0.25);
+    color: hsl(24, 94%, 53%);
+    padding: 6px 16px; border-radius: 100px;
+    text-transform: uppercase; letter-spacing: 0.8px;
+  }
+
+  .question {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 50px; font-weight: 700;
+    letter-spacing: -1.5px; line-height: 1.12;
+    margin-bottom: 40px;
+  }
+  .question em { font-style: normal; color: hsl(24, 94%, 53%); }
+
+  /* Answer cards */
+  .answers { display: flex; flex-direction: column; gap: 16px; flex: 1; }
+
+  .answer-card {
+    background: hsl(225, 12%, 9%);
+    border: 1px solid hsl(225, 10%, 16%);
+    border-radius: 14px;
+    padding: 24px 28px;
+    display: flex; gap: 20px; align-items: flex-start;
+  }
+  .answer-card.highlighted {
+    border-color: hsla(24,94%,53%,0.4);
+    background: hsla(24,94%,53%,0.05);
+  }
+
+  .answer-icon {
+    width: 44px; height: 44px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 24px; flex-shrink: 0;
+    background: hsl(225, 12%, 13%);
+  }
+
+  .answer-body {}
+  .answer-title {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 600;
+    margin-bottom: 6px;
+  }
+  .answer-desc { font-size: 16px; color: hsl(210, 15%, 58%); line-height: 1.55; }
+
+  .correct-badge {
+    display: inline-flex; align-items: center; gap: 6px; margin-top: 10px;
+    background: hsla(24,94%,53%,0.12);
+    border: 1px solid hsla(24,94%,53%,0.3);
+    padding: 4px 14px; border-radius: 100px;
+    font-size: 12px; font-weight: 600;
+    color: hsl(24, 94%, 60%); letter-spacing: 0.5px;
+    text-transform: uppercase;
+  }
+
+  .footer {
+    margin-top: 32px;
+    display: flex; align-items: center; justify-content: space-between;
+    border-top: 1px solid hsl(225, 10%, 14%);
+    padding-top: 24px;
+  }
+  .footer-note { font-size: 15px; color: hsl(210, 15%, 45%); }
+  .footer-cta { font-size: 15px; color: hsl(199, 89%, 48%); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="glow"></div>
+
+  <div class="header">
+    <span class="brand">bienzoli</span>
+    <span class="tag">Did you know?</span>
+  </div>
+
+  <div class="question">{{question}}</div>
+
+  <div class="answers">
+    <div class="answer-card">
+      <div class="answer-icon">{{icon1}}</div>
+      <div class="answer-body">
+        <div class="answer-title">{{answer1Title}}</div>
+        <div class="answer-desc">{{answer1Desc}}</div>
+      </div>
+    </div>
+
+    <div class="answer-card highlighted">
+      <div class="answer-icon">{{icon2}}</div>
+      <div class="answer-body">
+        <div class="answer-title">{{answer2Title}}</div>
+        <div class="answer-desc">{{answer2Desc}}</div>
+        <div class="correct-badge">✓ The answer</div>
+      </div>
+    </div>
+
+    <div class="answer-card">
+      <div class="answer-icon">{{icon3}}</div>
+      <div class="answer-body">
+        <div class="answer-title">{{answer3Title}}</div>
+        <div class="answer-desc">{{answer3Desc}}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    <div class="footer-note">{{footerNote}}</div>
+    <div class="footer-cta">bienzoli.com →</div>
+  </div>
+</body>
+</html>

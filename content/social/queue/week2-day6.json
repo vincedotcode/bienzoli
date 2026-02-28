@@ -1,0 +1,14 @@
+{
+  "date": "week2-day6",
+  "pillar": "technical-authority",
+  "template": "TipCard",
+  "caption": "Web dev insight: Why we use Next.js instead of WordPress.\n\nWordPress powers 43% of the internet. That doesn't make it the right choice for 2026.\n\nHere's the honest comparison:\n\nWordPress:\n- Plugin-dependent (each plugin = slower site)\n- Security patches required constantly\n- Themes sacrifice performance for features\n- Average PageSpeed: 40–65\n\nNext.js (what we use):\n- Server-side + static rendering = ultra-fast\n- No plugins, no attack surface\n- Deployed on Vercel edge CDN\n- Average PageSpeed: 92–99\n\nIf your site needs to rank on Google, convert mobile visitors, and stay secure — there's one clear choice.\n\n→ bienzoli.com — we build the right way.\n\n#NextJS #WordPress #WebDev #TechDecisions #MauritiusBusiness",
+  "templateData": {
+    "tipNumber": "12",
+    "category": "Tech Stack",
+    "headline": "Why we chose <em>Next.js</em> over WordPress.",
+    "bodyText": "WordPress powers 43% of the internet. That popularity comes at a cost: plugins, security patches, and performance that tops out at PageSpeed 65.",
+    "codeSnippet": "// Next.js: server-side + static generation\nexport async function generateStaticParams() {\n  // Pages pre-built at deploy time\n  // Zero server compute on page load\n  // Global CDN delivery = ultra-fast\n  return routes.map(r => ({ slug: r.slug }))\n}"
+  },
+  "imagePath": null
+}

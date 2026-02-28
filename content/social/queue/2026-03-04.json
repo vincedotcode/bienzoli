@@ -1,0 +1,20 @@
+{
+  "date": "2026-03-04",
+  "pillar": "education",
+  "template": "EducationCard",
+  "caption": "True or false: A Facebook page is enough for your business in 2026?\n\nFALSE. And here's why it matters to your bottom line.\n\nFacebook controls your reach. Algorithm changes can cut your visibility overnight — and there's nothing you can do about it.\n\nA website gives you:\n✓ Google discoverability (people searching for you)\n✓ 24/7 lead capture (while you sleep)\n✓ Professional credibility (before they ever contact you)\n✓ Your own platform — not rented land\n\nThe best businesses in Mauritius have both. Don't pick one.\n\n→ Start from Rs 8,000 at bienzoli.com\n\n#DigitalMarketing #MauritiusBusiness #WebsiteVsFacebook #GrowYourBusiness",
+  "templateData": {
+    "question": "Is a Facebook page <em>enough</em> for your business?",
+    "icon1": "📘",
+    "answer1Title": "Yes — Facebook has millions of users",
+    "answer1Desc": "Facebook reach is free and your customers are already there. What else do you need?",
+    "icon2": "🌐",
+    "answer2Title": "No — you're building on rented land",
+    "answer2Desc": "Facebook controls your reach. Algorithm changes, account bans, and ad costs are all outside your control. A website is yours.",
+    "icon3": "🤷",
+    "answer3Title": "Depends on your industry",
+    "answer3Desc": "Some businesses can survive on social only — but they're leaving Google traffic, credibility, and leads on the table.",
+    "footerNote": "Own your platform. Build a real website."
+  },
+  "imagePath": null
+}

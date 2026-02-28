@@ -5,6 +5,61 @@ One entry per decision. Most recent at top.
 
 ---
 
+## 2026-02-28 — CONTEXT SYSTEM REFACTOR (Modular v2)
+
+**What changed:** Refactored the monolithic `CLAUDE.md` (~600 lines, ~5,000+ tokens) into a modular, token-efficient context architecture.
+
+**Why:** The original CLAUDE.md was loaded in full every session regardless of task. A brand design session was loading the full folder tree, competitor landscape, Remotion video spec, and sales scripts — context it didn't need. The modular system loads only what the task requires.
+
+**Architecture:**
+- `CORE.md` — always-loaded minimal context (~700 tokens): identity, quality floor, tone, compressed agent registry, session protocol, context router
+- `context/modules/*.md` — 10 topic modules, loaded only when relevant
+- `context/working-set.md` — tiny rolling state (current task, open items)
+- `CLAUDE.md` — rewritten as short pointer/routing file
+
+**Estimated token saving:** Old CLAUDE.md ~5,000+ tokens every session. New: ~700 (CORE) + ~500–800 per module. Typical session: 1,200–1,800 tokens = **60–75% reduction**.
+
+**Content preserved:** All content from original CLAUDE.md relocated into module files — nothing deleted. Full agent responsibilities, service package tables, folder tree, roadmap, automation pipeline, market notes, ops details, sales scripts, and Remotion video spec all preserved in appropriate modules.
+
+**Files created:** `CORE.md`, `context/working-set.md`, `context/modules/brand.md`, `context/modules/packages.md`, `context/modules/agents.md`, `context/modules/folder-structure.md`, `context/modules/roadmap.md`, `context/modules/automation.md`, `context/modules/market.md`, `context/modules/ops.md`, `context/modules/sales.md`, `context/modules/content.md`
+
+**Files updated:** `CLAUDE.md` (rewritten as pointer file), `logs/decisions.md`
+
+**Decision maker:** AGENT 07 — Self-Architect
+**Session:** 2026-02-28
+
+---
+
+## 2026-02-27 — AGENT 12 MARKETING ENGINE ACTIVATED
+
+**What changed:** Built the complete bienzoli Marketing Automation System. Registered Agent 12 — Marketing Engine in CLAUDE.md and docs/agents/registry.md.
+
+**Why:** Phase B of the roadmap requires content marketing to start (TikTok, Instagram, LinkedIn). Facebook auto-posting is the first pillar — daily posts with social card images, no manual effort.
+
+**What was built:**
+- `docs/setup/facebook-api-setup.md` — Step-by-step token setup guide
+- `lib/facebook/api.ts` — Facebook Graph API TypeScript client (text posts, photo posts, engagement fetching)
+- `lib/image-gen/render.ts` — HTML-to-PNG social card renderer (puppeteer + sharp)
+- `scripts/facebook-post.mjs` — Post runner (finds today's JSON → posts to Facebook → archives)
+- `scripts/generate-social-image.mjs` — Image generator (renders HTML template → 1080×1080 PNG)
+- `scripts/generate-week.mjs` — Weekly schedule generator (creates dated post JSONs from content library)
+- `scripts/post-today.mjs` — Full daily pipeline orchestrator (generate image → post → archive → log)
+- `scripts/fetch-engagement.mjs` — Engagement data fetcher (updates performance log from Graph API)
+- `content/social/templates/` — 9 HTML social card templates (dark, branded, bienzoli design system)
+- `content/social/calendar.md` — 30-day content calendar with pillar rotation
+- `content/social/queue/week1-day*.json` — 7 Week 1 post drafts
+- `content/social/queue/week2-day*.json` — 7 Week 2 post drafts (14 posts total)
+- `logs/content-performance.md` — Engagement tracking log
+- `.github/workflows/daily-post.yml` — GitHub Actions cron (06:00 UTC = 10:00 AM MUT)
+
+**npm scripts added:** `social:generate-week`, `social:generate-images`, `social:post-today`, `social:post-facebook`, `social:dry-run`, `engagement:fetch`
+
+**Pending activation:** Add `FACEBOOK_PAGE_ID` and `FACEBOOK_PAGE_ACCESS_TOKEN` to `.env.local` (see `docs/setup/facebook-api-setup.md`), then add to GitHub Secrets to activate the cron.
+
+**Files updated:** CLAUDE.md, docs/agents/registry.md, package.json, logs/decisions.md
+
+---
+
 ## 2026-02-25 — TIKTOK INTRO VIDEO CREATED (REMOTION)
 
 **What changed:** Created 15-second TikTok intro video for bienzoli using Remotion. Full 7-scene structure, 3-layer audio system, spring-based animations throughout, bienzoli design system colors + fonts baked in.

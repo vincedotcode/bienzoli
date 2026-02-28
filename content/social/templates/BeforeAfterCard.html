@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700&family=DM+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    width: 1080px; height: 1080px; overflow: hidden;
+    background: hsl(225, 16%, 5%);
+    font-family: 'DM Sans', sans-serif;
+    color: hsl(210, 20%, 95%);
+    display: flex; flex-direction: column;
+    padding: 56px 64px;
+    position: relative;
+  }
+
+  .header {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-bottom: 36px;
+  }
+  .brand { font-family: 'Space Grotesk', sans-serif; font-size: 26px; font-weight: 700; color: hsl(199, 89%, 48%); }
+  .client-badge {
+    font-size: 14px; font-weight: 600; color: hsl(210, 15%, 65%);
+    background: hsl(225, 12%, 10%);
+    border: 1px solid hsl(225, 10%, 18%);
+    padding: 6px 16px; border-radius: 100px;
+  }
+
+  .headline {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 40px; font-weight: 700;
+    letter-spacing: -1px; line-height: 1.15;
+    margin-bottom: 32px;
+  }
+  .headline em { font-style: normal; color: hsl(199, 89%, 48%); }
+
+  /* Before/After split */
+  .split { display: flex; gap: 20px; flex: 1; }
+
+  .panel {
+    flex: 1;
+    background: hsl(225, 12%, 9%);
+    border: 1px solid hsl(225, 10%, 16%);
+    border-radius: 16px;
+    display: flex; flex-direction: column;
+    overflow: hidden;
+  }
+
+  .panel-header {
+    padding: 16px 20px;
+    border-bottom: 1px solid hsl(225, 10%, 14%);
+    display: flex; align-items: center; gap: 12px;
+  }
+  .panel-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 12px; letter-spacing: 2px; text-transform: uppercase;
+  }
+  .before-label { color: hsl(0, 65%, 60%); }
+  .after-label { color: hsl(199, 89%, 55%); }
+
+  .panel-indicator {
+    width: 8px; height: 8px; border-radius: 50%;
+  }
+  .indicator-bad { background: hsl(0, 65%, 55%); }
+  .indicator-good { background: hsl(199, 89%, 48%); }
+
+  /* Metrics list */
+  .metrics { padding: 24px 20px; display: flex; flex-direction: column; gap: 16px; flex: 1; }
+  .metric { display: flex; justify-content: space-between; align-items: center; }
+  .metric-name { font-size: 15px; color: hsl(210, 15%, 60%); }
+  .metric-val {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 20px; font-weight: 700;
+  }
+  .metric-val.bad { color: hsl(0, 65%, 65%); }
+  .metric-val.good { color: hsl(199, 89%, 55%); }
+
+  .metric-bar-track {
+    width: 100%; height: 4px;
+    background: hsl(225, 10%, 16%);
+    border-radius: 2px;
+    margin-top: 6px;
+  }
+  .metric-bar-fill { height: 100%; border-radius: 2px; }
+  .bar-bad { background: hsl(0, 65%, 55%); }
+  .bar-good { background: hsl(199, 89%, 48%); }
+
+  /* Verdict strip at bottom */
+  .verdict {
+    margin-top: 28px;
+    background: hsla(199,89%,48%,0.07);
+    border: 1px solid hsla(199,89%,48%,0.2);
+    border-radius: 12px;
+    padding: 16px 24px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .verdict-text { font-size: 16px; color: hsl(210, 15%, 65%); }
+  .verdict-text strong { color: hsl(199, 89%, 55%); }
+  .verdict-score {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px; font-weight: 700;
+    color: hsl(199, 89%, 48%);
+  }
+</style>
+</head>
+<body>
+  <div class="header">
+    <span class="brand">bienzoli</span>
+    <span class="client-badge">{{clientName}}</span>
+  </div>
+
+  <div class="headline">{{headline}}</div>
+
+  <div class="split">
+    <!-- Before -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-indicator indicator-bad"></div>
+        <span class="panel-label before-label">Before</span>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-name">PageSpeed</span>
+          <span class="metric-val bad">{{beforeScore}}</span>
+        </div>
+        <div class="metric-bar-track"><div class="metric-bar-fill bar-bad" style="width:{{beforeBarPct}}%;"></div></div>
+
+        <div class="metric">
+          <span class="metric-name">Load time</span>
+          <span class="metric-val bad">{{beforeLoad}}</span>
+        </div>
+        <div class="metric">
+          <span class="metric-name">Platform</span>
+          <span class="metric-val bad" style="font-size:16px;">{{beforePlatform}}</span>
+        </div>
+        <div class="metric">
+          <span class="metric-name">Mobile</span>
+          <span class="metric-val bad" style="font-size:16px;">{{beforeMobile}}</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- After -->
+    <div class="panel">
+      <div class="panel-header">
+        <div class="panel-indicator indicator-good"></div>
+        <span class="panel-label after-label">After bienzoli</span>
+      </div>
+      <div class="metrics">
+        <div class="metric">
+          <span class="metric-name">PageSpeed</span>
+          <span class="metric-val good">{{afterScore}}</span>
+        </div>
+        <div class="metric-bar-track"><div class="metric-bar-fill bar-good" style="width:{{afterBarPct}}%;"></div></div>
+
+        <div class="metric">
+          <span class="metric-name">Load time</span>
+          <span class="metric-val good">{{afterLoad}}</span>
+        </div>
+        <div class="metric">
+          <span class="metric-name">Platform</span>
+          <span class="metric-val good" style="font-size:16px;">Next.js</span>
+        </div>
+        <div class="metric">
+          <span class="metric-name">Mobile</span>
+          <span class="metric-val good" style="font-size:16px;">100% responsive</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="verdict">
+    <div class="verdict-text">{{verdictText}}</div>
+    <div class="verdict-score">+{{scoreImprovement}} pts</div>
+  </div>
+</body>
+</html>
