@@ -51,6 +51,7 @@
     "@remotion/cli": "^4.0.429",
     "@remotion/google-fonts": "^4.0.429",
     "@remotion/media": "^4.0.429",
+    "@vercel/analytics": "^1.6.1",
     "autoprefixer": "^10.4.20",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
