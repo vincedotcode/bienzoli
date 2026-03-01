@@ -16,7 +16,7 @@ import fs from 'fs'
 import path from 'path'
 import FormData from 'form-data'
 
-const GRAPH_VERSION = 'v19.0'
+const GRAPH_VERSION = 'v21.0'
 const BASE_URL = `https://graph.facebook.com/${GRAPH_VERSION}`
 
 // ─── Types ────────────────────────────────────────────────────────────────────

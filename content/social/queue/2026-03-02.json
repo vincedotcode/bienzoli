@@ -1,19 +1,17 @@
 {
   "date": "2026-03-02",
-  "pillar": "technical-authority",
-  "template": "SpeedTestCard",
-  "caption": "Why does your website score 38 on PageSpeed while bienzoli sites score 95+?\n\nIt's not luck. It's Next.js — the same framework used by TikTok, Notion, and Twitch.\n\nMost agencies in Mauritius ship WordPress. Fast themes with heavy plugins that bloat your page to 4MB and take 8 seconds to load on mobile.\n\nWe build from scratch. No plugins, no bloat, just clean code that loads in under 1 second.\n\nFaster site = better Google ranking = more customers finding you. 📈\n\n→ bienzoli.com\n\n#WebPerformance #PageSpeed #NextJS #MauritiusBusiness #WebDevelopment",
+  "pillar": "portfolio-proof",
+  "template": "PortfolioCard",
+  "caption": "Nickel Sew — 20 years of craft. Now with a website that shows it.\n\nA seamstress with two decades of experience and no online presence. We built her a full website in 3 days: before/after gallery, WhatsApp booking flow, loyalty programme, and a sustainability story that sets her apart.\n\nNot just a website. A proper business tool.\n\n→ nickelsew.com\n→ Your business next: bienzoli.com\n\nWhatsApp 5790 1383\n\n#bienzoli #PortfolioShowcase #MauritiusWebsite #SupportLocal #WebDesignMauritius",
+  "hashtags": "#bienzoli #PortfolioShowcase #MauritiusWebsite #SupportLocal #WebDesignMauritius",
+  "link": "https://nickelsew.com",
   "templateData": {
-    "headline": "Speed tells the story.",
-    "clientSite": "bienzoli build vs. WordPress",
-    "competitorLabel": "Typical WordPress site",
-    "competitorScore": "38",
-    "competitorDash": "108",
-    "competitorBarPct": "38",
-    "bienzoScore": "97",
-    "bienzoDash": "275",
-    "bienzoBarPct": "97",
-    "testDate": "Feb 2026"
+    "clientName": "Nickel Sew",
+    "industry": "Tailoring & Alterations",
+    "url": "nickelsew.com",
+    "deliveryTime": "3 days",
+    "packageName": "Port Louis",
+    "pageSpeedScore": "96"
   },
-  "imagePath": null
+  "imagePath": "content/social/queue/images/2026-03-02.png"
 }

@@ -1,15 +1,17 @@
 {
   "date": "2026-03-05",
   "pillar": "portfolio-proof",
-  "template": "TestimonialCard",
-  "caption": "\"Mo pa ti pense mo ti kapav ena enn website kumsa dan mo budget.\"\n\nThat's what Ziyaad told us after we delivered his personal brand site in 72 hours.\n\nFull custom design. Problem-framing sections. Testimonials. Service tabs. Internationally-polished — built for a consultant who works globally but is based in Mauritius.\n\nWhen you invest in a proper website, people take you seriously. That's the whole point. 🤝\n\n→ bienzoli.com — Port Louis package from Rs 18,000\n\n#ClientSuccess #bienzoli #MauritiusWebDesign #PersonalBranding",
+  "template": "PortfolioCard",
+  "caption": "KeyGo — car rental in Mauritius, online booking, local payments.\n\nA car rental business that needed more than a phone number. We built a full fleet display, booking flow, MCB Juice and my.t money payment options, and a testimonial section.\n\nProfessional look. Local feel. Built in Next.js.\n\n→ keygomu.vercel.app\n→ Your business next: bienzoli.com\n\nWhatsApp 5790 1383\n\n#bienzoli #CarRentalMauritius #MauritiusWebsite #LocalBusiness #PortfolioShowcase",
+  "hashtags": "#bienzoli #CarRentalMauritius #MauritiusWebsite #LocalBusiness #PortfolioShowcase",
+  "link": "https://keygomu.vercel.app",
   "templateData": {
-    "quote": "Mo pa ti pense mo ti kapav ena enn website kumsa dan mo budget. bienzoli deliver exactement seki mo ti bizwin — vite, propre, professionnel.",
-    "clientInitials": "ZB",
-    "clientName": "Ziyaad Ben Eydatoula",
-    "businessName": "Strategy Consultant · ziyaadbeneydatoula.com",
+    "clientName": "KeyGo",
+    "industry": "Car Rental Platform",
+    "url": "keygomu.vercel.app",
+    "deliveryTime": "3 days",
     "packageName": "Port Louis",
-    "deliveryTime": "72 hours"
+    "pageSpeedScore": "94"
   },
-  "imagePath": null
+  "imagePath": "content/social/queue/images/2026-03-05.png"
 }

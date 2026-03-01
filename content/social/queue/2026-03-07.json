@@ -1,10 +1,14 @@
 {
   "date": "2026-03-07",
-  "pillar": "offer",
-  "template": "PricingCard",
-  "caption": "February special: free Google Business Profile setup on any Port Louis or Grand Baie package booked this week.\n\nGoogle Business Profile = when someone searches for your type of business in Mauritius, you appear. It's the single most impactful thing for local businesses. And it's usually an extra.\n\nThis week, it's included. 📍\n\n→ Message us on WhatsApp or visit bienzoli.com to book\n→ Availability is limited\n\n#bienzoli #GoogleBusiness #MauritiusMarketing #LocalSEO #SpecialOffer",
+  "pillar": "social-proof",
+  "template": "StatCard",
+  "caption": "40+ projects built and shipped.\n\nEvery one of them: mobile-first, fast, clean code, still running.\n\nFrom seamstresses in Flic en Flac to car rental companies in Grand Baie. From strategy consultants to nail salons.\n\nBig or small, every business deserves a website that actually works.\n\n→ bienzoli.com\n\n#bienzoli #40Projects #MauritiusWebAgency #WebDevelopment #SmallBusinessMauritius",
+  "hashtags": "#bienzoli #40Projects #MauritiusWebAgency #WebDevelopment #SmallBusinessMauritius",
+  "link": "https://bienzoli.com",
   "templateData": {
-    "headline": "Packages built for <em>Mauritius businesses</em>."
+    "number": "40+",
+    "unit": "Projects",
+    "description": "Built and shipped. Mobile-first, fast, clean code — and still running."
   },
-  "imagePath": null
+  "imagePath": "content/social/queue/images/2026-03-07.png"
 }

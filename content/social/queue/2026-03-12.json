@@ -1,0 +1,18 @@
+{
+  "date": "2026-03-12",
+  "pillar": "portfolio-proof",
+  "template": "PortfolioCard",
+  "caption": "DS Nails came to us with a problem: clients were booking through Instagram DMs, missing appointments, and losing revenue.\n\nWe built them a proper booking site — service menu, pricing, gallery, and an auth system so clients can manage their own appointments.\n\nNow their bookings are organised. No more lost DMs. No more no-shows without notice.\n\nThis is what a website should do. Not just look good — solve a real business problem.\n\nSee the work → dsnail.vercel.app",
+  "hashtags": "#bienzoli #WebDesign #Mauritius #NailSalon #BookingSystem #SmallBusiness #DSNails #WebDevelopment #MauritiusBusiness",
+  "link": "https://dsnail.vercel.app",
+  "templateData": {
+    "clientName": "DS Nails",
+    "industry": "Beauty & Wellness",
+    "location": "Mauritius",
+    "url": "dsnail.vercel.app",
+    "deliveryTime": "3 Days",
+    "packageName": "Port Louis",
+    "pageSpeedScore": "94"
+  },
+  "imagePath": "content/social/queue/images/2026-03-12.png"
+}

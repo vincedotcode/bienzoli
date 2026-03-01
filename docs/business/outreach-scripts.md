@@ -69,9 +69,33 @@ Hi [Name] — mo content to biznes. Mo run bienzoli, nou build websites modern p
 Hi [Name], I run bienzoli, a Mauritius-based web development agency focused on fast, high-performance websites with built-in AI features. I’d like to connect and follow your work.
 ```
 
+## Facebook DM Template (Short)
+
+### English
+```
+Hi [Name] — came across [Business Name] and noticed you [don’t have a website / your site could use a refresh]. I run bienzoli, we build fast modern websites for Mauritius businesses — delivery from 48 hours, starting Rs 8,000. If you’d like a free quick audit of your current online presence, I’m happy to put one together. Vince from bienzoli
+```
+
+### Kreol
+```
+Bonzour [Name] — mo finn truv [Business Name] ek mo finn remarke ki [zot pena website / zot site kapav upgrader]. Mo run bienzoli, nou build websites rapid pou businesses dan Moris — depi 48h, depi Rs 8,000. Si ou anvi, mo kapav fer enn ti audit gratis lor zot presence online. Vince de bienzoli
+```
+
+## Free Website Audit Offer
+
+### English
+```
+Hi [Name]! Quick question — do you know how your website currently performs on Google? I run bienzoli, and we offer a free 10-minute website audit: we check speed, mobile friendliness, and SEO basics, and give you a simple report. No strings attached — if there’s nothing to fix, we’ll tell you. Want me to run one for [Business Name]?
+```
+
+### Kreol
+```
+Bonzour [Name]! Rapide — ou kone komien zot website perform lor Google zordi? Mo run bienzoli ek nou offer enn audit gratis — nou check vitesse, mobile, ek SEO, ek nou avoy ou enn rapport sinp. Si tou bon, nou dir ou. Ou anvi mo fer enn check pou [Business Name]?
+```
+
 ## Objection Handling Templates
 
-### "It's too expensive"
+### "It’s too expensive"
 Response:
 - Acknowledge budget reality.
 - Reframe value: speed, performance, lead capture, long-term asset ownership.
@@ -79,7 +103,7 @@ Response:
 
 Template:
 ```
-Totally fair — budget matters. The reason our pricing is structured this way is because you're getting a production-grade site built for conversion, not just a design mockup. If this tier feels high right now, we can start with FLIC EN FLAC at Rs 8,000 (or monthly option where applicable) and scale later.
+Totally fair — budget matters. The reason our pricing is structured this way is because you’re getting a production-grade site built for conversion, not just a design mockup. If this tier feels high right now, we can start with FLIC EN FLAC at Rs 8,000 (or Rs 800/month) and scale later when the site is paying for itself.
 ```
 
 ### "I just use Facebook/Instagram"
@@ -89,7 +113,7 @@ Response:
 
 Template:
 ```
-Social media is great for visibility, but a website gives you credibility, Google discoverability, and a place you fully own. Most customers still check a website before they trust a business.
+Social media is great for visibility, but a website gives you credibility, Google discoverability, and a place you fully own. Most customers still check a website before trusting a business — especially for first-time purchases. And Facebook can change its algorithm or remove your page. Your website is yours permanently.
 ```
 
 ### "I already have a website"
@@ -98,16 +122,16 @@ Response:
 
 Template:
 ```
-Great — in that case, we can run a free speed test comparison and show where performance or conversion can improve. If your current site is already strong, we’ll tell you honestly.
+Great — in that case, we can run a free speed test comparison and show where performance or conversion can improve. If your current site is already strong, we’ll tell you honestly. Want me to run a quick check?
 ```
 
-### "I'll think about it"
+### "I’ll think about it"
 Response:
 - Remove pressure, keep momentum.
 
 Template:
 ```
-Of course — take your time. If helpful, I can send a quick mockup idea for how your updated site could look, so you can evaluate something concrete.
+Of course — take your time. If helpful, I can send a quick mockup idea for how your updated site could look, so you can evaluate something concrete rather than just an abstract decision. No commitment needed.
 ```
 
 ### "Can you do it cheaper?"
@@ -117,5 +141,21 @@ Response:
 
 Template:
 ```
-We keep pricing fixed to protect build quality. What we can do is reduce scope and start with the right package for now, then upgrade when you're ready.
+We keep pricing fixed to protect build quality — discounting means cutting corners somewhere, and that’s not how we work. What we can do is start with the right-sized package for now (FLIC EN FLAC at Rs 8,000 is excellent for getting online fast) and upgrade when you’re ready.
+```
+
+### "My cousin / friend can do it"
+Response:
+- Don’t compete. Let them. Reframe the risk.
+
+Template:
+```
+That’s totally an option — and it might work out great. The risk is usually around timeline, maintenance, and what happens if something breaks after launch. If they deliver something solid, brilliant. If it doesn’t work out, we’re here and we can usually fix or rebuild quickly. Either way, happy to share what we’d have done differently if that’s useful.
+```
+
+## Post-Delivery Testimonial Request
+
+### Kreol
+```
+Bonzour [Name]! Zot website finn live pou [X jours/semaines] — espere li pe travay bien pou zot! Ti kapav fer nou enn ti faveur? Enn ti commantaire lor zot experience avek bienzoli ti pou rode beaucoup. Ou kapav: 1) Avoy nou enn voice note WhatsApp ou enn ti texte, ou 2) Laisse enn Google review ici: [link]. Mersi beaucoup pou zot confiance!
 ```

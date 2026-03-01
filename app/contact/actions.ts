@@ -2,6 +2,9 @@
 
 import { z } from "zod"
 import { sql } from "@/lib/db"
+import { transporter, FROM_ADDRESS, ADMIN_EMAIL } from "@/lib/emails/transporter"
+import { buildNotificationEmail } from "@/lib/emails/notification"
+import { buildConfirmationEmail } from "@/lib/emails/confirmation"
 
 const contactSchema = z.object({
   name: z.string().min(2, "Name must be at least 2 characters"),
@@ -88,6 +91,49 @@ export async function submitContact(
           message: `New lead: ${data.name} from ${data.company || "N/A"} - ${data.serviceNeeded}`,
         })})
       `
+    }
+
+    // Send emails — fire both in parallel, don't block the response if email fails
+    try {
+      const notification = buildNotificationEmail({
+        name: data.name,
+        company: data.company,
+        email: data.email,
+        phone: data.phone,
+        whatsapp: data.whatsapp,
+        serviceNeeded: data.serviceNeeded,
+        monthlyAdBudget: data.monthlyAdBudget,
+        message: data.message,
+        utmSource: data.utmSource,
+        utmMedium: data.utmMedium,
+        utmCampaign: data.utmCampaign,
+      })
+
+      const confirmation = buildConfirmationEmail({
+        name: data.name,
+        serviceNeeded: data.serviceNeeded,
+      })
+
+      await Promise.all([
+        transporter.sendMail({
+          from: FROM_ADDRESS,
+          to: ADMIN_EMAIL,
+          replyTo: data.email,
+          subject: notification.subject,
+          html: notification.html,
+          text: notification.text,
+        }),
+        transporter.sendMail({
+          from: FROM_ADDRESS,
+          to: data.email,
+          subject: confirmation.subject,
+          html: confirmation.html,
+          text: confirmation.text,
+        }),
+      ])
+    } catch (emailErr) {
+      // Log but don't fail the form submission — lead is already saved to DB
+      console.error("Email send error:", emailErr)
     }
 
     return { success: true }

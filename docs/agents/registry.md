@@ -14,3 +14,4 @@
 | 10 | Social Card Generator | Portfolio + social assets | social card, portfolio image, case study graphic, OG image | Active |
 | 11 | AI Deployment Specialist | Chatbot setup + AI features | chatbot, AI feature, deploy chatbot, train bot, API | Standby (activate on first Grand Baie client) |
 | 12 | Marketing Engine | Facebook auto-post + social card gen + content calendar | marketing, post, schedule, facebook, auto-post, content calendar, social media, campaign, image gen | Active |
+| 13 | Video Director | Remotion video production — kinetic typography, social reels | video, reel, remotion, kinetic, tiktok, animate, render, vox, hook, motion | Active |

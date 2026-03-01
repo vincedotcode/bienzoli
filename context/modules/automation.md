@@ -39,11 +39,14 @@ npm run social:post-today
 
 | File | Purpose |
 |------|---------|
-| `content/social/templates/*.html` | 9 social card HTML templates (dark, branded) |
-| `content/social/queue/YYYY-MM-DD.json` | Dated post files |
+| `content/social/templates/*.html` | 9 social card HTML templates (dark, branded, 1080×1080) |
+| `content/social/templates/*.ts` | 9 TypeScript template functions (typed, return HTML string) |
+| `content/social/templates/index.ts` | Unified re-export of all TS templates + types |
+| `content/social/queue/YYYY-MM-DD.json` | Dated JSON post files (single post) |
+| `content/social/queue/[date]-[type]-[slug]/` | Folder-based posts: `post.md` + `image.png` |
 | `content/social/calendar.md` | 30-day content calendar with pillar rotation |
-| `lib/facebook/api.ts` | Facebook Graph API TypeScript client |
-| `lib/image-gen/render.ts` | HTML-to-PNG (puppeteer + sharp) |
+| `lib/facebook/api.ts` | Facebook Graph API v21.0 TypeScript client |
+| `lib/image-gen/render.ts` | HTML-to-PNG renderer (puppeteer + sharp, 3 size presets) |
 | `scripts/post-today.mjs` | Daily pipeline orchestrator |
 | `scripts/generate-week.mjs` | Weekly schedule generator |
 | `scripts/fetch-engagement.mjs` | Engagement data fetcher |
@@ -63,9 +66,12 @@ npm run engagement:fetch        # Pull engagement data from Graph API
 
 - GitHub Actions cron: `0 6 * * *` (06:00 UTC = 10:00 AM MUT)
 - Image output: `content/social/queue/images/`
-- Facebook API version: v19.0
+- Facebook API version: **v21.0**
 - Image post: `POST /{page-id}/photos` | Text post: `POST /{page-id}/feed`
 - Content pillars: Portfolio proof | Technical authority | Local social proof | Education | Offers
+- Image sizes: `instagram` 1080×1080 (default) | `facebook` 1200×630 | `story` 1080×1920
+- CLI image gen: `node scripts/generate-social-image.mjs --template portfolio --data '{"clientName":"..."}' --out image.png`
+- Folder post format: `[date]-[type]-[slug]/post.md` (YAML frontmatter: date, template, pillar, hashtags, link) + `image.png`
 
 ### Required Env Vars
 

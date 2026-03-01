@@ -5,11 +5,10 @@
  * Uses puppeteer (headless Chrome) to render an HTML template to PNG,
  * then sharp to crop/resize to exact dimensions.
  *
- * Output: 1080×1080 PNG (1:1 for Facebook/Instagram feed)
- *
- * Usage (from Node/ESM scripts):
+ * Usage (from TypeScript):
  *   import { renderCard } from '@/lib/image-gen/render'
- *   await renderCard('PortfolioCard', { projectName: 'Nickel Sew', ... }, 'output.png')
+ *   await renderCard('PortfolioCard', { clientName: 'Nickel Sew', ... }, 'output.png')
+ *   await renderCard('PortfolioCard', { ... }, 'output.png', 'instagram')
  */
 
 import puppeteer from 'puppeteer'
@@ -21,9 +20,15 @@ import { fileURLToPath } from 'url'
 const __dirname = path.dirname(fileURLToPath(import.meta.url))
 const TEMPLATES_DIR = path.resolve(__dirname, '../../content/social/templates')
 
-// Output dimensions
-const CARD_WIDTH  = 1080
-const CARD_HEIGHT = 1080
+// ─── Size Presets ─────────────────────────────────────────────────────────────
+
+export type SizePreset = 'facebook' | 'instagram' | 'story'
+
+export const SIZE_PRESETS: Record<SizePreset, { width: number; height: number }> = {
+  facebook:  { width: 1200, height: 630 },   // 1.91:1 — Facebook feed, LinkedIn
+  instagram: { width: 1080, height: 1080 },  // 1:1    — Instagram, Facebook square
+  story:     { width: 1080, height: 1920 },  // 9:16   — Stories, Reels, TikTok
+}
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -37,6 +42,8 @@ export type CardTemplate =
   | 'SpeedTestCard'
   | 'StatCard'
   | 'BeforeAfterCard'
+  | 'CallToActionCard'
+  | 'EducationCard'
 
 export type CardData = Record<string, string | number | boolean>
 
@@ -45,20 +52,24 @@ export type CardData = Record<string, string | number | boolean>
 /**
  * Renders an HTML template with injected data to a PNG file.
  *
- * @param template  Name of the template (matches filename in content/social/templates/)
- * @param data      Key-value pairs injected into the template via {{key}} placeholders
+ * @param template   Name of the template (matches filename in content/social/templates/)
+ * @param data       Key-value pairs injected into the template via {{key}} placeholders
  * @param outputPath Absolute or relative path for the output PNG
+ * @param size       Output size preset (default: 'instagram' = 1080×1080)
  */
 export async function renderCard(
   template: CardTemplate,
   data: CardData,
-  outputPath: string
+  outputPath: string,
+  size: SizePreset = 'instagram'
 ): Promise<string> {
   const templatePath = path.join(TEMPLATES_DIR, `${template}.html`)
 
   if (!fs.existsSync(templatePath)) {
     throw new Error(`Template not found: ${templatePath}`)
   }
+
+  const { width, height } = SIZE_PRESETS[size]
 
   // Load template HTML and inject data
   let html = fs.readFileSync(templatePath, 'utf-8')
@@ -79,25 +90,25 @@ export async function renderCard(
 
   try {
     const page = await browser.newPage()
-    await page.setViewport({ width: CARD_WIDTH, height: CARD_HEIGHT, deviceScaleFactor: 2 })
+    await page.setViewport({ width, height, deviceScaleFactor: 2 })
     await page.setContent(html, { waitUntil: 'networkidle0' })
 
     // Wait for Google Fonts to load
     await page.evaluate(() => document.fonts.ready)
 
-    // Capture screenshot at 2x scale then downscale to exactly 1080×1080
+    // Capture screenshot
     const screenshot = await page.screenshot({
       type: 'png',
-      clip: { x: 0, y: 0, width: CARD_WIDTH, height: CARD_HEIGHT },
+      clip: { x: 0, y: 0, width, height },
     })
 
     // Resolve output path
     const absOutput = path.resolve(outputPath)
     fs.mkdirSync(path.dirname(absOutput), { recursive: true })
 
-    // Resize with sharp to ensure exact dimensions (handles 2x deviceScaleFactor)
+    // Resize with sharp to ensure exact dimensions
     await sharp(screenshot as Buffer)
-      .resize(CARD_WIDTH, CARD_HEIGHT, { fit: 'cover' })
+      .resize(width, height, { fit: 'cover' })
       .png({ quality: 95 })
       .toFile(absOutput)
 

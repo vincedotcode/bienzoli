@@ -1,0 +1,14 @@
+{
+  "date": "2026-03-13",
+  "pillar": "education",
+  "template": "TipCard",
+  "caption": "85% of your potential customers are browsing on their phone right now.\n\nIf your website isn't built mobile-first, you're losing them in the first 3 seconds.\n\nWhat \"mobile-first\" actually means:\n→ Text that's readable without zooming\n→ Buttons big enough to tap without missing\n→ Images that load fast on 4G\n→ Navigation that works with a thumb, not a cursor\n\nEvery bienzoli site is designed mobile-first from day one. Not as an afterthought. Not a desktop site that \"also works\" on phone.\n\nMobile-first is the standard. Not the upgrade.\n\nWant to see how your current site performs on mobile? Drop us a message.",
+  "hashtags": "#bienzoli #WebDesign #MobileFirst #Mauritius #SmallBusiness #WebDevelopment #UXDesign #MauritiusBusiness #DigitalMarketing",
+  "link": "https://bienzoli.com",
+  "templateData": {
+    "headline": "85% browse on mobile.",
+    "body": "If your site isn't built mobile-first, you're losing them in the first 3 seconds. Every bienzoli build starts with mobile — responsive, thumb-friendly, fast on 4G.",
+    "tipNumber": "04"
+  },
+  "imagePath": "content/social/queue/images/2026-03-13.png"
+}

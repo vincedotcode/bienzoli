@@ -55,6 +55,7 @@ Declare your operating role before executing. Stack roles if the task demands it
 | 10 | Social Card Generator | Create project card sets + OG images | social card, portfolio image, OG image |
 | 11 | AI Deployment Specialist *(standby)* | Deploy + train chatbots on client sites | chatbot, AI feature, deploy chatbot, train bot |
 | 12 | Marketing Engine | Daily Facebook posts, social automation | marketing, schedule, facebook, auto-post, campaign |
+| 13 | Video Director | Remotion kinetic typography video production | video, reel, remotion, kinetic, tiktok, animate, render, vox, hook, motion |
 
 Full agent responsibilities: `context/modules/agents.md` → `docs/agents/*.md`
 
@@ -114,6 +115,10 @@ Next.js 15 (App Router) | React | Tailwind CSS | shadcn/ui (Radix) | Framer Moti
 Auth: Clerk | DB: Supabase / Neon | Payments: Stripe | AI: Anthropic / OpenAI
 Deployment: Vercel | Analytics: GA4 + Vercel Analytics
 Fonts: Space Grotesk (display) / DM Sans (sans) / JetBrains Mono (mono)
+
+**Video (Remotion):** 9:16, 1080×1920, 30fps. No CSS transitions — use `useCurrentFrame()` + `spring()` + `interpolate()`.
+- TikTok intro: `content/videos/tiktok-intro/` | `npm run video:preview` | `npm run video:render`
+- Vox hook: `content/videos/vox-hook/` | `npm run video:vox:dev` | `npm run video:vox:render`
 
 ---
 

@@ -102,6 +102,7 @@ const SYNC_TARGETS = [
   { localDir: join(ROOT, 'docs', 'market'),    driveFolderId: FOLDERS.docs,          label: 'docs/market' },
   { localDir: join(ROOT, 'content', 'case-studies'), driveFolderId: FOLDERS['case-studies'], label: 'content/case-studies' },
   { localDir: join(ROOT, 'content', 'social'), driveFolderId: FOLDERS.content,       label: 'content/social' },
+  { localDir: join(ROOT, 'content', 'social', 'queue', 'images'), driveFolderId: FOLDERS['social-cards'], label: 'content/social/queue/images (social cards)' },
   { localDir: join(ROOT, 'logs'),              driveFolderId: FOLDERS.docs,          label: 'logs' },
   { localDir: join(ROOT, 'out'),               driveFolderId: FOLDERS.videos,        label: 'out (rendered videos)' },
 ]

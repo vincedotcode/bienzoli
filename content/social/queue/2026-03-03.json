@@ -1,12 +1,14 @@
 {
   "date": "2026-03-03",
-  "pillar": "local-social-proof",
-  "template": "LocalEngagementCard",
-  "caption": "To bizness merit enn bon website. 🇲🇺\n\nPas juste enn page Facebook — enn site ki montre to professionalism, ki capture leads, ki ouvert 24/7 meme kan to pe dormi.\n\nNous comprends Moris: WhatsApp-first, MCB Juice, Kreol-friendly, livraison rapide.\n\nWebsite to business dan 48 er. Rs 8,000 pou koumanse.\n\nMessagez nou aswi 👇\n\n#bienzoli #WebsiteMoris #SmallBusinessMoris #MauritiusDigital",
+  "pillar": "education",
+  "template": "TipCard",
+  "caption": "Your Instagram is not a website. Here's why that matters.\n\n75% of people judge your credibility by your website — before they ever contact you.\n\nWhen someone Googles your business name, Instagram doesn't rank the same way. And if Meta changes the algorithm? Your reach disappears overnight.\n\nA website is yours. Your address, your rules, your leads.\n\nFrom Rs 8,000 at bienzoli.com\n\n#WebsiteTips #SmallBusinessMauritius #DigitalPresence #bienzoli #OnlineBusiness",
+  "hashtags": "#WebsiteTips #SmallBusinessMauritius #DigitalPresence #bienzoli #OnlineBusiness",
+  "link": "https://bienzoli.com",
   "templateData": {
-    "flagEmoji": "🇲🇺",
-    "kreolHeadline": "To bizness merit enn bon <em>website</em>.",
-    "englishSubtitle": "Not just a Facebook page. A real online presence that works 24/7, captures leads, and grows your business while you sleep."
+    "tipNumber": "01",
+    "headline": "Your Instagram is not a website.",
+    "body": "75% of people judge credibility by your website. Google can't rank Instagram like a site. You don't own your social page — algorithm changes can kill your reach overnight. A website is yours, forever."
   },
-  "imagePath": null
+  "imagePath": "content/social/queue/images/2026-03-03.png"
 }

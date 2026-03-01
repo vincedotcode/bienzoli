@@ -1,0 +1,14 @@
+{
+  "date": "2026-03-14",
+  "pillar": "social-proof",
+  "template": "StatCard",
+  "caption": "48 hours.\n\nThat's our average delivery time for a Flic en Flac site.\n\nNot 2 weeks. Not \"we'll get back to you after the design phase\". Not a 6-email back-and-forth before a single line of code is written.\n\n48 hours from brief to live.\n\nHow?\n→ We've built the process, not just the site\n→ Templates that are production-ready, not starter kits\n→ One point of contact. No middlemen.\n→ We build while you sleep\n\nYour business shouldn't have to wait weeks to get online.\n\nReady to be live by Thursday? Message us today.",
+  "hashtags": "#bienzoli #WebDesign #Mauritius #FastDelivery #SmallBusiness #WebDevelopment #48Hours #MauritiusBusiness #GetOnline",
+  "link": "https://bienzoli.com",
+  "templateData": {
+    "number": "48",
+    "unit": "Hours",
+    "description": "Average delivery time for a bienzoli Flic en Flac site. Brief on Monday. Live on Wednesday. No waiting weeks."
+  },
+  "imagePath": "content/social/queue/images/2026-03-14.png"
+}

@@ -1,0 +1,16 @@
+{
+  "date": "2026-03-11",
+  "pillar": "technical-authority",
+  "template": "SpeedTestCard",
+  "caption": "Next.js vs WordPress. The numbers don't lie.\n\nThe same framework used by Netflix, Nike, and Notion — vs. plugins, themes, and shared hosting.\n\nWe've tested dozens of Mauritius business sites. The average WordPress score is 42. Our builds average 95.\n\nThat gap costs you Google ranking. It costs you customers. It costs you money.\n\n→ bienzoli.com\n\n#NextJS #WordPress #WebPerformance #MauritiusWebsite #PageSpeed #bienzoli",
+  "hashtags": "#NextJS #WordPress #WebPerformance #MauritiusWebsite #PageSpeed #bienzoli",
+  "link": "https://bienzoli.com",
+  "templateData": {
+    "headline": "The framework gap.",
+    "competitorName": "WordPress (Mauritius avg)",
+    "competitorScore": "42",
+    "bienzolScore": "95",
+    "testDate": "Mar 2026"
+  },
+  "imagePath": "content/social/queue/images/2026-03-11.png"
+}

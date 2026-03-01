@@ -3,64 +3,85 @@
 > Full detail + contract terms: `docs/business/packages.md`
 > Payment templates: `docs/business/invoice-template.md`, `docs/business/contract-template.md`
 
-## Package Tiers
+## Custom Features Policy
 
-### FLIC EN FLAC — Rs 8,000 (or Rs 800/mo × 12)
+AI chatbots, CRM integrations, automation workflows, business email hosting — **none of these are included in any standard package.** They are available as custom add-ons, scoped and priced per project. When a client asks about them, the response is: "We build those too — let's scope it and price it based on what you actually need."
+
+Free tools for basic needs (Google Sheets, Notion, Google Business Profile) are set up as part of onboarding helpfulness, not marketed as features.
+
+---
+
+## Project Package Tiers
+
+### FLIC EN FLAC — Rs 8,000 one-time
 - **Delivery:** 24–48 hours
-- Single-page micro-site: Hero + services + contact + WhatsApp
-- Domain (.com 1yr) + Hosting (1yr) included
-- 14-day support | 1 revision round
+- Single-page micro-site: Hero + services + contact + WhatsApp CTA
+- Clean design, client branding applied, mobile responsive
+- Domain setup (1 year) + Hosting (1 year)
+- 1 revision round
 - **Best for:** Hairdressers, food vendors, freelancers, tutors, small shops, market stalls
 
-### PORT LOUIS — Rs 18,000 (or Rs 1,800/mo × 12)
-- **Delivery:** 3 days
-- Full one-page site: 5–7 sections, custom design, mobile-first
-- WhatsApp + contact form | Google Analytics + GBP setup
-- Domain + Hosting included
-- 30-day support | 2 revision rounds
+### PORT LOUIS — Rs 18,000 one-time
+- **Delivery:** 3 business days
+- Full one-page site: 5–7 sections, mobile-first custom design
+- WhatsApp + contact form integration
+- Google Business Profile setup + Google Analytics 4
+- Domain (1 year) + Hosting (1 year)
+- 2 revision rounds
 - **Best for:** Salons, restaurants, fitness coaches, local services, small retail
 
-### GRAND BAIE — Rs 35,000
+### GRAND BAIE — Rs 35,000 one-time ← **Most Popular**
 - **Delivery:** 5–7 business days
-- Multi-page site (up to 5 pages), premium design
-- Basic AI Chatbot (FAQ-trained, EN/FR/Kreol)
-- Google Analytics + 3 monthly reports | GBP setup + optimisation
-- Domain + Hosting included
-- 90-day support | 3 revision rounds
+- Multi-page site (up to 5 pages), premium custom design
+- WhatsApp + automated lead notifications
+- Google Business Profile optimisation + GA4 + monthly report (3 months)
+- Domain (1 year) + Hosting (1 year)
+- 3 revision rounds
 - **Best for:** Clinics, real estate agents, retail chains, tourism operators
 
-### LE MORNE — Rs 60,000+
-- **Delivery:** 2–4 weeks
-- Custom web app or platform, fully bespoke
-- Advanced AI Chatbot (multi-language, context-aware)
-- Full local SEO + custom analytics dashboard
-- Domain + Hosting included
-- Ongoing retainer support | Unlimited revisions
-- **Best for:** Enterprises, hotels, SaaS products, franchises, high-volume businesses
+### LE MORNE — Rs 60,000+ custom quote
+- **Delivery:** 2–4 weeks depending on scope
+- Custom web application or platform, fully bespoke design + development
+- Full local SEO setup + custom analytics dashboard
+- Domain (1 year) + Hosting (1 year)
+- Unlimited revisions during project + ongoing retainer support
+- **AI, automation, CRM — scoped and priced per project for LE MORNE clients**
+- **Best for:** Enterprises, franchises, hotels, SaaS products, high-volume businesses
 
-## Monthly Retainers (Post-Project)
+---
 
-| | Essential — Rs 2,000/mo | Growth — Rs 5,000/mo |
+## Maintenance Plans (Post-Project, Optional)
+
+| | ESSENTIAL — Rs 1,500/mo | GROWTH — Rs 3,000/mo |
 |--|------------------------|---------------------|
-| Hosting + SSL + backups | ✓ | ✓ |
-| Security updates | ✓ | ✓ |
+| Hosting & SSL management | ✓ | ✓ |
+| Monthly security updates & backups | ✓ | ✓ |
 | Content changes | 2/month | 5/month |
-| AI chatbot hosting | — | ✓ |
+| Uptime monitoring | ✓ | ✓ |
+| Email support (48hr) | ✓ | ✓ |
 | Monthly analytics report | — | ✓ |
-| Priority support | — | ✓ |
+| Priority WhatsApp support (same-day) | — | ✓ |
+| Quarterly performance review | — | ✓ |
+| Google Business Profile updates | — | ✓ |
+
+No long-term contract. Cancel anytime with 30 days notice. Maintenance is optional — all sites are fully handed over at delivery.
+
+---
 
 ## Payment Terms
 
-- 50% upfront, 50% on delivery — Flic en Flac + Port Louis
-- Milestone-based — Grand Baie + Le Morne
+- 50% upfront, 50% on delivery — all project packages
+- Maintenance billed monthly, no contract required
 - Methods: bank transfer | MCB Juice | my.t money
 - All amounts in MUR (Mauritian Rupees)
 
-## Support & Revision Limits
+---
 
-| Package | Support Period | Revisions |
-|---------|---------------|-----------|
-| Flic en Flac | 14 days | 1 round |
-| Port Louis | 30 days | 2 rounds |
-| Grand Baie | 90 days | 3 rounds |
-| Le Morne | Ongoing | Unlimited |
+## Support Periods (Project Packages)
+
+| Package | Post-launch Support |
+|---------|-------------------|
+| Flic en Flac | 14 days |
+| Port Louis | 30 days |
+| Grand Baie | 90 days |
+| Le Morne | Ongoing retainer |

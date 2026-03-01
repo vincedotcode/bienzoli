@@ -5,6 +5,136 @@ One entry per decision. Most recent at top.
 
 ---
 
+## 2026-03-01 — VOX-STYLE HOOK VIDEO (REMOTION)
+
+**What changed:** Built a complete 15-second Vox-style kinetic typography video in Remotion for TikTok and Facebook Reels. Registered Agent 13 — Video Director.
+
+**Why:** bienzoli needs social video content that demonstrates speed, credibility, and local relevance. A Vox-style kinetic typography format is high-impact, works without a presenter or camera, and can be produced programmatically — making it repeatable for future campaigns.
+
+**Technical decisions:**
+- Separate `remotion.vox.config.ts` at project root (not modifying the tiktok-intro config)
+- `@remotion/sfx` `whoosh` (string constant, not function) for zero-file scene transition audio
+- 6 scenes in 450 frames: Hook → Stat → Problem → Proof → Offer → CTA
+- MotionGrid component for ambient dot background (infinite scroll via `frame % spacing`)
+- Spring presets: SLAM / SMOOTH / SNAPPY / BOUNCY / BAR — defined in `utils/springs.ts`
+- All colours from design system tokens — no hardcoded hex
+- TikTok safe zones respected (top 120px, bottom 200px)
+
+**Files created:**
+- `content/videos/vox-hook/src/Root.tsx`
+- `content/videos/vox-hook/src/VoxHook.tsx`
+- `content/videos/vox-hook/src/utils/theme.ts`
+- `content/videos/vox-hook/src/utils/springs.ts`
+- `content/videos/vox-hook/src/components/KineticText.tsx`
+- `content/videos/vox-hook/src/components/Highlighter.tsx`
+- `content/videos/vox-hook/src/components/StatCounter.tsx`
+- `content/videos/vox-hook/src/components/ComparisonBar.tsx`
+- `content/videos/vox-hook/src/components/MotionGrid.tsx`
+- `content/videos/vox-hook/src/components/SoundDesign.tsx`
+- `content/videos/vox-hook/src/scenes/Scene1-Hook.tsx` through `Scene6-CTA.tsx`
+- `remotion.vox.config.ts`
+
+**npm scripts added:**
+- `video:vox:dev` — Remotion Studio preview
+- `video:vox:render` — render to `out/vox-hook.mp4`
+
+**Packages installed:** `@remotion/sfx`, `@remotion/transitions`, `@remotion/media-utils`
+
+---
+
+## 2026-02-28 — PACKAGE SIMPLIFICATION & WEBSITE UPDATE
+
+**What changed:** Simplified all packages to remove AI, CRM, and business email as standard features. Added two maintenance plans. Updated bienzoli.com with 4-tier pricing, real portfolio screenshots, maintenance section, and cleaned-up page structure.
+
+**Why:** Cleaner positioning. Standard packages should not overpromise. AI, CRM, and automation are custom add-ons scoped per project. Maintenance plans create recurring revenue without overcomplicating the base offer. The site was showing old prices (Rs 15k / 25k) and CRM as a standard product — neither reflects the actual offer.
+
+**Pricing changes:**
+- FLIC EN FLAC: Rs 8,000 (was absent from site)
+- PORT LOUIS: Rs 18,000 (was Rs 15,000)
+- GRAND BAIE: Rs 35,000 (was Rs 25,000), Most Popular
+- LE MORNE: Rs 60,000+ custom quote (unchanged)
+- NEW: Essential maintenance Rs 1,500/mo | Growth maintenance Rs 3,000/mo
+
+**Removed from standard packages:** AI chatbot, CRM system, business email hosting, lead management dashboard. These are now described as custom add-on work ("We build those too — let's talk.").
+
+**Website sections changed:**
+- Removed: AISection, ProductPreview, Testimonials (commented out), ProjectsShowcase (DB-driven)
+- Added: PortfolioSection (static, real screenshots), MaintenanceSection
+- New page order: Hero → Features → HowItWorks → Portfolio → Pricing → Maintenance → FAQ → CTA → Footer
+
+**Portfolio screenshots:** Took real desktop + mobile screenshots of all 4 live client sites using puppeteer. Saved to `public/portfolio/` (8 PNGs). Script: `scripts/take-portfolio-screenshots.mjs`.
+
+**Footer updated:** Added vincedotcode ltd, WhatsApp link, Kreol tagline "Mo build website ki fer bizness grandi. 🇲🇺".
+
+**Files created:** `components/portfolio-section.tsx`, `components/maintenance-section.tsx`, `scripts/take-portfolio-screenshots.mjs`, `public/portfolio/*.png` (8 files), `design/exports/portfolio/*.png` (8 files)
+
+**Files updated:** `components/pricing.tsx` (full rewrite), `components/footer.tsx`, `app/page.tsx`, `context/modules/packages.md`, `logs/decisions.md`
+
+**Decision maker:** AGENT 04 — Platform Engineer + AGENT 01 — Brand Guardian + AGENT 03 — Sales Closer
+**Session:** 2026-02-28
+
+---
+
+## 2026-02-28 — MARKETING LAUNCH SPRINT (Complete Infrastructure Build)
+
+**What changed:** Built the complete bienzoli Facebook marketing infrastructure — scripts, TypeScript templates, 14 days of content, audit tool, and outreach expansion. Upgraded Facebook API to v21.0.
+
+**Why:** Phase B of the roadmap requires active content marketing. This sprint makes the daily post pipeline fully operational from day one — no manual effort needed to post, generate images, or track performance.
+
+**What was built:**
+
+*Scripts upgraded:*
+- `scripts/facebook-post.mjs` — Added `--today`, `--folder <path>` modes; `parseFrontmatter()` for YAML frontmatter; `archiveFolderPost()`; upgraded to Graph API v21.0
+- `scripts/generate-social-image.mjs` — Added direct CLI mode (`--template`, `--data`, `--size`, `--out`); backward-compatible queue mode retained; `TEMPLATE_ALIASES` map; `SIZE_PRESETS`
+- `lib/facebook/api.ts` — v19.0 → v21.0
+- `lib/image-gen/render.ts` — Added `SizePreset` type; `SIZE_PRESETS` (facebook 1200×630, instagram 1080×1080, story 1080×1920); optional size param on `renderCard()`
+
+*TypeScript templates (new — `content/social/templates/`):*
+- 9 typed template files: `portfolio-card.ts`, `tip-card.ts`, `build-process-card.ts`, `testimonial-card.ts`, `local-card.ts`, `pricing-card.ts`, `speed-test-card.ts`, `stat-card.ts`, `before-after-card.ts`
+- `index.ts` — unified re-export of all functions + interfaces
+- Each exports a typed interface + function returning a complete standalone HTML string
+
+*14-day content queue (new — `content/social/queue/`):*
+- `2026-03-02.json` — Nickel Sew portfolio (PortfolioCard)
+- `2026-03-03.json` — "Your Instagram is not a website" tip (TipCard)
+- `2026-03-04.json` — 48-hour build process (BuildProcessCard)
+- `2026-03-05.json` — KeyGo portfolio (PortfolioCard)
+- `2026-03-06.json` — "Speed = Revenue" tip (TipCard)
+- `2026-03-07.json` — "40+ Projects" stat (StatCard)
+- `2026-03-08.json` — Kreol local engagement (LocalEngagementCard)
+- `2026-03-09.json` — Ziyaad portfolio (PortfolioCard)
+- `2026-03-10.json` — AI chatbot tip (TipCard)
+- `2026-03-11.json` — Next.js vs WordPress speed test (SpeedTestCard)
+- `2026-03-12.json` — DS Nails portfolio (PortfolioCard)
+- `2026-03-13.json` — "85% browse on mobile" tip (TipCard)
+- `2026-03-14.json` — "48 Hours" delivery stat (StatCard)
+- `2026-03-15.json` — Kreol Google search engagement (LocalEngagementCard)
+
+*New business documents:*
+- `docs/business/website-audit-template.md` — Full lead-conversion audit checklist (speed, mobile, SEO, conversion, WhatsApp delivery script, package recommendation)
+- `docs/business/outreach-scripts.md` — Expanded with: Facebook DM template (EN + Kreol), free audit offer hook (EN + Kreol), full objection handling for 6 scenarios ("cousin can do it" added), Kreol testimonial request
+
+*Logs expanded:*
+- `logs/content-performance.md` — Added content type averages table, pillar performance table, top posts tracker, weekly insights, benchmark targets
+
+*Modules updated:*
+- `context/modules/automation.md` — Updated to v21.0, added TypeScript templates reference, folder-based post format, size presets, CLI image gen command
+
+**Key architecture decisions:**
+- TypeScript templates (`.ts`) export typed functions for use from TypeScript code. ESM scripts (`.mjs`) continue using `.html` files — they cannot import `.ts` directly. Both interfaces maintained.
+- Folder-based post format (`[date]-[type]-[slug]/`) enables rich posts with custom images without modifying the JSON queue system.
+- Graph API moved to v21.0 — keep this updated before token refresh (Facebook deprecates older versions periodically).
+
+**Pending activation:** Add `FACEBOOK_PAGE_ID` and `FACEBOOK_PAGE_ACCESS_TOKEN` to `.env.local`, then to GitHub Secrets → cron activates automatically.
+
+**Files created:** 9 TS templates, `index.ts`, 14 queue JSONs, `docs/business/website-audit-template.md`
+**Files updated:** `scripts/facebook-post.mjs`, `scripts/generate-social-image.mjs`, `lib/facebook/api.ts`, `lib/image-gen/render.ts`, `docs/business/outreach-scripts.md`, `logs/content-performance.md`, `context/modules/automation.md`, `logs/decisions.md`
+
+**Decision maker:** AGENT 12 — Marketing Engine + AGENT 02 — Content Strategist + AGENT 07 — Self-Architect
+**Session:** 2026-02-28
+
+---
+
 ## 2026-02-28 — CONTEXT SYSTEM REFACTOR (Modular v2)
 
 **What changed:** Refactored the monolithic `CLAUDE.md` (~600 lines, ~5,000+ tokens) into a modular, token-efficient context architecture.

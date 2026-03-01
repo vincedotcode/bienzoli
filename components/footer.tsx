@@ -11,14 +11,14 @@ export function Footer() {
     [t.footer.services]: [
       { label: t.footer.websites, href: "#features" },
       { label: t.footer.landingPages, href: "#features" },
-      { label: t.footer.ecommerce, href: "#pricing" },
+      { label: "Portfolio", href: "#projects" },
       { label: t.footer.seo, href: "#features" },
-      { label: t.footer.aiTools, href: "#ai" },
+      { label: "Pricing", href: "#pricing" },
     ],
     [t.footer.company]: [
       { label: t.footer.about, href: "#" },
       { label: t.footer.contactUs, href: "/contact" },
-      { label: t.footer.blog, href: "#" },
+      { label: "WhatsApp", href: "https://wa.me/23057901383" },
     ],
     [t.footer.legal]: [
       { label: t.footer.privacy, href: "#" },
@@ -38,6 +38,7 @@ export function Footer() {
               <span className="text-lg font-semibold tracking-[0.03em] text-foreground lowercase">bienzoli</span>
             </Link>
             <p className="mt-4 max-w-xs text-sm leading-relaxed text-muted-foreground">{t.footer.tagline}</p>
+            <p className="mt-2 max-w-xs text-sm font-medium text-lagoon">Mo build website ki fer bizness grandi. 🇲🇺</p>
           </div>
           {Object.entries(footerLinks).map(([category, links]) => (
             <div key={category}>
@@ -53,8 +54,11 @@ export function Footer() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-border/50 pt-8 sm:flex-row">
-          <p className="text-xs text-muted-foreground">{`\u00A9 ${new Date().getFullYear()} bienzoli. ${t.footer.rights}`}</p>
-          <p className="text-xs text-muted-foreground">{t.footer.madeIn}</p>
+          <div>
+            <p className="text-xs text-muted-foreground">{`\u00A9 ${new Date().getFullYear()} bienzoli. ${t.footer.rights}`}</p>
+            <p className="mt-0.5 text-xs text-muted-foreground">vincedotcode ltd · Mauritius</p>
+          </div>
+          <p className="text-xs text-muted-foreground">{t.footer.madeIn} 🇲🇺</p>
         </div>
       </div>
     </footer>
