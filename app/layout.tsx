@@ -4,6 +4,7 @@ import { Space_Grotesk, JetBrains_Mono, DM_Sans } from "next/font/google"
 import { Toaster } from "@/components/ui/sonner"
 import { ThemeProvider } from "@/components/theme-provider"
 import { LocaleProvider } from "@/components/locale-provider"
+import { Analytics } from "@vercel/analytics/next"
 import "./globals.css"
 
 // Display font: Space Grotesk — for headlines, h1/h2/h3, overlines only
@@ -203,6 +204,7 @@ export default function RootLayout({
             <Toaster />
           </LocaleProvider>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   )
